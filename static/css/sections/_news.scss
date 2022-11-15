@@ -1,0 +1,19 @@
+.news {
+    text-align: center;
+    &__title {
+        @include font(vw(60), 500, vw(89) );
+    }
+    &__info {
+        @include font(vw(35), 300, vw(52) );
+        margin-bottom: vw(100);
+    }
+    &__cards {
+        justify-content: center;
+    }
+    &__card {
+        margin-right: vw(55);
+        :last-child {
+            margin-right: 0;
+        }
+    }
+}

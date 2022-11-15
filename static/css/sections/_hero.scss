@@ -1,0 +1,16 @@
+.hero {
+    color: white;
+    background-image: url("../images/herobg.png");
+    background-position: center;
+    height: vw(938);
+    @include flex();
+    flex-direction: column;
+    &__title, .main__title {
+        margin-bottom: vw(40);
+        @include font(vw(60), 500, vw(89));
+    }
+    &__info {
+        @include font(vw(35), 300, vw(52));
+        margin-bottom: vw(120);
+    }
+}

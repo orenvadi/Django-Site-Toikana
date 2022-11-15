@@ -1,0 +1,327 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Semibold.woff") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Regular.woff") format("woff");
+  font-weight: 400;
+}
+.header__info {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.header__info ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header__info ul li {
+  display: block;
+}
+.header__info ul ul {
+  flex-direction: column;
+}
+.header__info ul .logo__title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6875vw;
+  line-height: 2.5vw;
+}
+.header .nav {
+  margin-top: 2.6357406431vh;
+}
+.header .nav__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .nav__list-item {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+
+.footer {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer__contacts h3 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.5vw;
+  line-height: 3.6875vw;
+}
+.footer__contacts ul li {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.75vw;
+  line-height: 2.5625vw;
+}
+
+.hero {
+  color: white;
+  background-image: url("../images/herobg.png");
+  background-position: center;
+  height: 58.625vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero__title, .hero .main__title {
+  margin-bottom: 2.5vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.75vw;
+  line-height: 5.5625vw;
+}
+.hero__info {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.1875vw;
+  line-height: 3.25vw;
+  margin-bottom: 7.5vw;
+}
+
+.about {
+  margin: 10vw 0;
+}
+.about__list {
+  display: flex;
+  justify-content: space-around;
+}
+.about__list li {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 2.3125vw;
+}
+
+.reservation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3.75vw;
+}
+.reservation__info {
+  width: 63.125vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3.125vw;
+  line-height: 4.625vw;
+  text-align: center;
+  margin-bottom: 6.25vw;
+}
+
+.branches {
+  margin-top: 6.25vw;
+  text-align: center;
+}
+.branches__title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.625vw;
+  line-height: 5.375vw;
+}
+.branches__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-items: center;
+}
+.branches__list-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20.4375vw;
+  height: 22.25vw;
+  position: relative;
+}
+.branches__list-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.branches__list-item h4, .branches__list-item p {
+  color: white;
+}
+.branches__list-item .h4 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.875vw;
+  line-height: 2.75vw;
+}
+.branches__list-item p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.branches__images {
+  margin-top: 9.375vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.branches__image {
+  width: 48.5%;
+  margin-bottom: 0.9375vw;
+}
+
+.menu {
+  margin-top: 9.375vw;
+  text-align: center;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3.125vw;
+}
+
+.news {
+  text-align: center;
+}
+.news__title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.75vw;
+  line-height: 5.5625vw;
+}
+.news__info {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.1875vw;
+  line-height: 3.25vw;
+  margin-bottom: 6.25vw;
+}
+.news__cards {
+  justify-content: center;
+}
+.news__card {
+  margin-right: 3.4375vw;
+}
+.news__card :last-child {
+  margin-right: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "SF Pro Display";
+  background: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul, h1, h2, h3, h4, h5, h6, p, div, span {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.25vw;
+  line-height: 3.1628887717vh;
+  margin: 3.4264628361vh 0 3.4264628361vh;
+}
+
+.text {
+  display: inline-block;
+  width: 40vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875vw;
+  line-height: 1.5814443859vh;
+  margin-bottom: 3.6900369004vh;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  width: 48%;
+}
+
+.col-4 {
+  width: 32%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.button {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.75vw;
+  line-height: 1.0542962572vh;
+  padding: 1.25vw 3.125vw;
+  border-radius: 2.3125vw;
+  text-decoration: none;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.375vw;
+  line-height: 1.7395888245vh;
+}
+.button_brown {
+  background: #5A2F1C;
+  color: white;
+}
+.button_white {
+  background: white;
+  color: #000;
+}/*# sourceMappingURL=index.css.map */

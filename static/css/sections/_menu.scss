@@ -1,0 +1,8 @@
+.menu {
+    margin-top: vw(150);
+    text-align: center;
+    &__list {
+        @include flex($justify: space-around);
+        margin-bottom: vw(50);
+    }
+}

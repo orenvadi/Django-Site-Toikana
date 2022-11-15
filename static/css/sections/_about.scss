@@ -1,0 +1,10 @@
+.about {
+    margin: vw(160) 0;
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        li {
+            @include font(vw(25), 300, vw(37) );
+        }
+    }
+}

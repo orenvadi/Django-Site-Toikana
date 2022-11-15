@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 150px;
+    @include flex($justify: space-around);
+    &__contacts {
+        h3 {
+            @include font(vw(40), 500, vw(59) );
+        }
+        ul {
+            li {
+                @include font(vw(28), 300, vw(41) );
+            }
+        }
+    }
+}

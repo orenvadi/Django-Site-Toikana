@@ -1,0 +1,27 @@
+.header {
+    &__info {
+        @include font(vw(20), 400, vw(30));
+        ul {
+            @include flex($justify: space-around);
+            li {
+                display: block;
+            }
+            ul {
+                flex-direction: column;
+            }
+            .logo__title {
+                @include font(vw(27), 500, vw(40));
+
+            }
+        }
+    }
+    .nav {
+        margin-top: vh(50);
+        &__list {
+            @include flex($justify: space-around);
+            &-item {
+                @include font(vw(20), 500, vw(30));
+            }
+        }
+    }
+}

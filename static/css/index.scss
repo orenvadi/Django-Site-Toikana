@@ -1,0 +1,76 @@
+@import './helpers/fonts';
+@import './helpers/mixins';
+@import './helpers/functions';
+
+@import './components/header';
+@import './components/footer';
+
+@import './sections/hero';
+@import './sections/about';
+@import './sections/reservation';
+@import './sections/branches';
+@import './sections/menu';
+@import './sections/news';
+
+
+body {
+    margin: 0;
+    font-family: 'SF Pro Display';
+    background: white;
+}
+ul {
+    list-style-type: none;
+}
+ul, h1, h2, h3, h4, h5, h6, p, div, span{
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+.title {
+    @include font(vw(36), 400, vh(60) );
+    margin: vh(65) 0 vh(65);
+}
+.text {
+    display: inline-block;
+    width: vw(640);
+    @include font(vw(14), 600, vh(30));
+    margin-bottom: vh(70);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-6 {
+    width: 48%;
+}
+.col-4 {
+    width: 32%;
+}
+.col-3 {
+    width: 25%;
+}
+.button{
+    @include font(vw(12), 800, vh(20));
+    padding: vw(20) vw(50);
+    border-radius: vw(37);
+    text-decoration: none;
+    text-align: center;
+    @include font(vw(22), 500, vh(33));
+    &_brown {
+        background: #5A2F1C;
+        color: white;
+    }
+    &_white {
+        background: white;
+        color: #000;
+    }
+}
+
+
