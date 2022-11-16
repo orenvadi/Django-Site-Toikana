@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="/static/css/menu.css"/>
+<body>
+    <center>
+        <header>
+            <h1>
+                Наши контакты и как нас найти
+            </h1>
+        </header>
+
+        {% for i in contacts %}
+        <div class="class">
+            <h2> Наши адреса - {{i.address}}</h2>
+            <p>Телефоны для брони -{{i.phone_number}}</p>
+            <p>whatsApp - {{i.whatsApp}}</p>
+            <p>telegram - {{i.telegram}}</p>
+            <p>instagram - {{i.instagram}}</p>
+            <img src="{{i.address_map.url}}" alt="" width="400" height="400">
+            <!-- <button class="btn">
+                <a href="/dish_detail/{{i.id}}">Подробнее</a>
+            </button> -->
+        </div>
+        {%endfor%}
+    </center>
+</body>

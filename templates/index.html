@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
-
+<html lang="en">
+{% block content %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,9 +44,13 @@
     <div class="nav">
       <ul class="nav__list">
         <li class="nav__list-item">ГЛАВНАЯ</li>
-        <li class="nav__list-item">МЕНЮ</li>
+        <li class="nav__list-item">     
+           <a href="http://127.0.0.1:8000/menu/">МЕНЮ</a>
+        </li>
         <li class="nav__list-item">РЕЗЕРВАЦИИ</li>
-        <li class="nav__list-item">ИНФОРМАЦИЯ</li>
+        <li class="nav__list-item">
+          <a href="http://127.0.0.1:8000/contact/">ИНФОРМАЦИЯ</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -129,7 +133,9 @@
         Мы собрали лучшие рецепты из всех cтран мира. Мы определенно можем гарантировать, что даже самый привередливый
         посетитель найдет блюдо по своему вкусу. Мы приглашаем Вас посетить сеть ресторанов «Белый Аист» в Бишкеке.
       </p>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+        <button class="button button_white">
+            <a href="http://www.vertex-academy.com">ЗАБРОНИРОВАТЬ </a>
+        </button>
     </section>
     <section class="branches">
       <h2 class="branches__title"> “Белый Аист” - это четыре ресторана абсолютно разной направленности и местоположения
@@ -213,7 +219,10 @@
           <h6>цена: 920 сом</h6>
         </li>
       </ul>
-      <button class="button button_white">ПОСМОТРЕТЬ МЕНЮ</button>
+      <button class="button button_white">
+        <a href="http://127.0.0.1:8000/menu/">ПОСМОТРЕТЬ МЕНЮ</a>
+
+        </button>
     </section>
     <!-- <section class="kitchener">
 
@@ -225,18 +234,25 @@
       <p class="news__info">
         Мы проводим интересные мероприятия: живые концерты, еженедельные дегустации и меню от приглашенных шефов.
       </p>
+
       <ul class="news__cards row">
-        <li class="news__card col-4">
-          <img src="/static/images/newsImage1.png" alt="">
-          <h5>Какая то новость</h5>
-          <p>Теперь для всех именинников действует 10% скидка на меню по всей сети ресторанов Бухара!</p>
-        </li>
-        <li class="news__card col-4">
-          <img src="/static/images/newsImage2.png" alt="">
-          <h5>Другая новость</h5>
-          <p>Теперь для всех именинников действует 10% скидка на меню по всей сети ресторанов Бухара!</p>
-        </li>
+        {%for i in news%}
+          <li class="news__card col-4">
+            <img src="{{i.image.url}}" class="image-responsive" alt="kjfkjlka" width="100" height="100">
+            <h5><a href="{{i.name}}"></a></h5>
+            <h5>{{i.date}}</h5>
+            <p>{{i.description}}</p>
+          </li>
+
+          <li class="news__card col-4">
+            <img src="{{i.image.url}}" class="image-responsive" alt="jjjjjjjjjj" width="100" height="100">
+            <h5><a href="#">{{i.name}}</a></h5>
+            <h5>{{i.date}}</h5>
+            <p>{{i.description}}</p>
+          </li>
+        {% endfor %}
       </ul>
+
     </section>
     <!-- <section class="reviews">
 
@@ -255,5 +271,6 @@
     <div class="footer__map"></div>
   </footer>
 </body>
+{% endblock %}
 
 </html>
