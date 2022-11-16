@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Menu(models.Model):
     MENU = (
         ("Первые блюда", "Первые блюда"),
@@ -12,28 +13,30 @@ class Menu(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField()
-    menu =  models.CharField(choices=MENU, max_length=100)
+    menu = models.CharField(choices=MENU, max_length=100)
     price = models.IntegerField()
 
     def __str__(self):
         return self.title
 
+
 class News(models.Model):
-    title=models.TextField()
+    title = models.TextField()
     description = models.TextField(null=True)
-    date= models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(null=True,upload_to='')
+    date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(null=True, upload_to="")
 
     def __str__(self):
         return self.title
 
+
 class Contact(models.Model):
     instagram = models.CharField(max_length=50, null=True)
     whatsApp = models.CharField(max_length=40, null=True)
-    telegram= models.TextField(null=True)
-    phone_number = models.CharField(max_length=40,null=True)
+    telegram = models.TextField(null=True)
+    phone_number = models.CharField(max_length=40, null=True)
     address = models.TextField(null=True)
-    address_map= models.ImageField(upload_to='',null=True)
+    address_map = models.ImageField(upload_to="", null=True)
 
     def __str__(self):
         return self.address
