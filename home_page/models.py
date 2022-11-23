@@ -41,6 +41,7 @@ class Contact(models.Model):
     def __str__(self):
         return self.address
 
+
 class Chef(models.Model):
     image = models.ImageField(upload_to="")
     name = models.TextField()
@@ -48,6 +49,7 @@ class Chef(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Review(models.Model):
     description = models.TextField()
