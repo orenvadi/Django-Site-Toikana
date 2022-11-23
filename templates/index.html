@@ -141,15 +141,15 @@
       <h2 class="branches__title"> “Белый Аист” - это четыре ресторана абсолютно разной направленности и местоположения
       </h2>
       <ul class="branches__list">
+        {% for y in branch_list %}
         <li class="branches__list-item">
-          <img src="/static/images/branchesListitem1.png">
-          <h4>Асанбай</h4>
-          <p>
-            Duis consequat nulla neque, in efficitur lorem porta a. Pellentesque sit amet odio convallis, maximus risus
-            eu, sollicitudin sapien.
-          </p>
+          <img src="{{y.image.url}}">
+          <h4>{{y.name}}</h4>
+          <p>{{y.description}}</p>
         </li>
-        <li class="branches__list-item">
+        {% endfor %}
+
+        <!-- <li class="branches__list-item">
           <img src="/static/images/branchesListitem2.png">
           <h4>Золотой Аист</h4>
           <p>
@@ -172,7 +172,7 @@
             Fusce mattis vestibulum nisi ut rhoncus. Praesent dui mauris, eleifend eu dictum et, pharetra fermentum
             lacus. Maecenas et orci varius, scelerisque risus.
           </p>
-        </li>
+        </li> -->
       </ul>
       <div class="branches__images">
         <div class="branches__image">

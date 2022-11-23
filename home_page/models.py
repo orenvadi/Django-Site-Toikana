@@ -57,3 +57,11 @@ class Review(models.Model):
 
     def __str__(self):
         return self.name
+
+class Branch(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="")
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name

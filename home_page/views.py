@@ -37,6 +37,7 @@ class HomePageView(ListView):  # просмотр начальной стран�
         context.update(
             {
                 "menu_list": models.Menu.objects.order_by("title"),
+                "branch_list": models.Branch.objects.all(),
             }
         )
         return context
