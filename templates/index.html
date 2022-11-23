@@ -45,11 +45,11 @@
       <ul class="nav__list">
         <li class="nav__list-item">ГЛАВНАЯ</li>
         <li class="nav__list-item">     
-           <a href="http://127.0.0.1:8000/menu/">МЕНЮ</a>
+           <a href="{% url 'menu' %}">МЕНЮ</a>
         </li>
         <li class="nav__list-item">РЕЗЕРВАЦИИ</li>
         <li class="nav__list-item">
-          <a href="http://127.0.0.1:8000/contact/">ИНФОРМАЦИЯ</a>
+          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
         </li>
       </ul>
     </div>
@@ -198,26 +198,27 @@
     </section>
     <section class="menu">
       <ul class="menu__list row">
+        {% for x in menu_list %}
         <li class="menu__list-item col-4">
-          <img src="/static/images/menuImage1.png" alt="">
-          <h4>Праздничный плов</h4>
-          <p>Рассыпчатый золотистый плов с добавлением гороха и изюма ,с нежной говядиной ,готовится исключительно на
-            кунжутном масле.</p>
-          <h6>цена: 2500 сом</h6>
+          <img src="{{x.image.url}}" alt="" width="400" height="400">
+          <h4>{{x.title}}</h4>
+          <p>{{x.description}}</p>
+          <h6>{{x.price}}</h6>
+        </li>
+        <!-- <li class="menu__list-item col-4">
+          <img src="{{x.image.url}}" alt="">
+          <h4>{{x.title}}</h4>
+          <p>{{x.description}}</p>
+          <h6>{{x.price}}</h6>
         </li>
         <li class="menu__list-item col-4">
-          <img src="/static/images/menuImage2.png" alt="">
-          <h4>Ассорти шашлыков</h4>
-          <p>Ассорти из шашлыков. Предложение для большой компании. Телятина, баранина, кофта, крылышки, ферганский,
-            курица, печень, овощи на углях</p>
-          <h6>цена: 3500 сом</h6>
-        </li>
-        <li class="menu__list-item col-4">
-          <img src="/static/images/menuImage3.png" alt="">
-          <h4>Стейк с грушей</h4>
-          <p>Сочный и нежный рибай с аппетитно запечённой грушей политый мёдом</p>
-          <h6>цена: 920 сом</h6>
-        </li>
+          <img src="{{x.image.url}}" alt="">
+          <h4>{{x.title}}</h4>
+          <p>{{x.description}}</p>
+          <h6>{{x.price}}</h6>
+        </li> -->
+        {% endfor %}
+
       </ul>
       <button class="button button_white">
         <a href="http://127.0.0.1:8000/menu/">ПОСМОТРЕТЬ МЕНЮ</a>
@@ -236,20 +237,20 @@
       </p>
 
       <ul class="news__cards row">
-        {%for i in news%}
+        {%for i in news_list %}
           <li class="news__card col-4">
-            <img src="{{i.image.url}}" class="image-responsive" alt="kjfkjlka" >
+            <img src="{{i.image.url}}" class="image-responsive" alt="kjfkjlka" width="400" height="400" >
             <h5><a href="{{i.name}}"></a></h5>
             <h5>{{i.date}}</h5>
             <p>{{i.description}}</p>
           </li>
-
+<!-- 
           <li class="news__card col-4">
             <img src="{{i.image.url}}" class="image-responsive" alt="jjjjjjjjjj">
             <h5><a href="#">{{i.name}}</a></h5>
             <h5>{{i.date}}</h5>
             <p>{{i.description}}</p>
-          </li>
+          </li> -->
         {% endfor %}
       </ul>
 

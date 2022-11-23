@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView
 
 from . import models
 
@@ -15,17 +15,14 @@ def show_all(request):
 
 def show_home_page(request):
     news = models.News.objects.all()
-    # context={'news':news}
-    return render(request, "index.html", {"news": news})
+    menu= models.Menu.objects.all()
+    print(news)    # context={'news':news}
+    return render(request, "index.html", {"news": news,"menu":menu})
 
 
-# def show_news(request):
-#     news=models.News.objects.all().values()
-#     template=loader.get_template('index.html')
-#     context={
-#         'news':news,
-#     }
-#     return HttpResponse(template.render(context,request))
+def show_news(request):
+    news=models.News.objects.all()
+    return render(request, "news.html",{ "news":news })
 # получение одного блюда
 def find_by_id(request, id):
     dish = get_object_or_404(models.Menu, id=id)
@@ -37,9 +34,17 @@ def show_contacts(request):
     return render(request, "contact.html", {"contacts": contacts})
 
 
-class HomePageView(TemplateView):  # просмотр начальной страницы
+class HomePageView(ListView):  # просмотр начальной страницы
     model = models.News
+    context_object_name = 'news_list'
     template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(HomePageView, self).get_context_data(**kwargs)
+        context.update({
+            'menu_list': models.Menu.objects.order_by('title'),
+        })
+        return context
 
 
 class AboutPageView(TemplateView):  # просмотр страницы о проекте
