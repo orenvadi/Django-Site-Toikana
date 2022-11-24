@@ -38,6 +38,8 @@ class HomePageView(ListView):  # просмотр начальной стран�
             {
                 "menu_list": models.Menu.objects.order_by("title"),
                 "branch_list": models.Branch.objects.all(),
+                "chef_list":models.Chef.objects.all(),
+                "review_list":models.Review.objects.all(),
             }
         )
         return context

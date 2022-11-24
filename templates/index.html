@@ -190,7 +190,13 @@
     <section class="kitchener">
       <div class="swiper">
         <div class="swiper-wrapper">
+          {% for z in chef_list%}
           <div class="swiper-slide">
+            <img src="{{z.image.url}}" alt="">
+            <h4>{{z.name}}</h4>
+            <p>{{z.description}}</p>
+          </div>
+          <!-- <div class="swiper-slide">
             <img src="/static/images/kitchener.png" alt="">
             <h4>Имя Повара</h4>
             <p>Шеф повар ресторанов белый аист</p>
@@ -199,12 +205,8 @@
             <img src="/static/images/kitchener.png" alt="">
             <h4>Имя Повара</h4>
             <p>Шеф повар ресторанов белый аист</p>
-          </div>
-          <div class="swiper-slide">
-            <img src="/static/images/kitchener.png" alt="">
-            <h4>Имя Повара</h4>
-            <p>Шеф повар ресторанов белый аист</p>
-          </div>
+          </div> -->
+          {% endfor %}
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -230,37 +232,35 @@
       </section>
     </section>
 
-
-
-
     <section class="reviews">
       <h2>ОТЗЫВЫ</h2>
       <div class="swiper">
         <div class="swiper-wrapper">
+          {%for u in review_list%}
           <div class="swiper-slide">
+            <img src="/static/images/like.svg" alt="">
+            <div>
+              <p>{{ u.description }}</p>
+            </div>
+          </div>
+          <!-- <div class="swiper-slide">
             <img src="/static/images/like.svg" alt="">
             <div>
               <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
                 уровне официанты почти
                 не отходят от столов</p>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="/static/images/like.svg" alt="">
-            <div>
-              <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
-                уровне официанты почти
-                не отходят от столов</p>
-            </div>
-          </div>
-          <div class="swiper-slide">
+          </div> -->
+          <!-- <div class="swiper-slide">
             <img src="/static/images/like.svg" alt="">
             <div>
               <p>Недано были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
                 уровне официанты почти
                 не отходят от столов</p>
             </div>
-          </div>
+          </div> -->
+          {% endfor %}
+
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
