@@ -1,0 +1,34 @@
+.feedback {
+    color: white;
+    background-image: url("../images/backgroundform.png");
+    background-position: center;
+    height: vw(938);
+    @include flex();
+    text-align: center;
+    flex-direction: column;
+    h5, p {
+        @include font(vw(45), 500, vw(67));
+    }
+    .form {
+        @include flex;
+        flex-direction: column;
+        @include font(vw(20), 300, vw(30));
+        margin-top: vw(50);
+        label {
+            margin-bottom: vw(25);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            input, select {
+                width: vw(500);
+                height: vw(40);
+            }
+        }
+        .formButton {
+            background: #5A2F1C;
+            color: white;
+            width: vw(500);
+            height: vw(40);
+        }
+    }
+}

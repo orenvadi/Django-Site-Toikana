@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 150px;
+    margin: vw(100) 0;
     @include flex($justify: space-around);
     &__contacts {
         h3 {

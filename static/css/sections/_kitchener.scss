@@ -1,0 +1,23 @@
+.kitchener {
+    background: #F3F7E9;
+    .swiper {
+        width: 90vw;
+        height: 100vh;
+        &-slide {
+            text-align: center;
+            @include flex;
+            flex-direction: column;
+            img {
+                width: vw(386);
+                height: vw(386);
+            }
+            h4 {
+                @include font(vw(45), 600, vh(67) );
+                margin:vh(50) 0;
+            }
+            p {
+                @include font(vw(27), 300, vh(40) );
+            }
+        }
+    }
+}

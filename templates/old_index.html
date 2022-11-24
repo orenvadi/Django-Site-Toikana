@@ -4,12 +4,11 @@
 {% block content %}
 
 <head>
-  <script href="/static/js/script.js"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- <link rel="stylesheet" type="text/static/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
   <link rel="stylesheet" href="/static/css/index.css">
   <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
 </head>
@@ -135,13 +134,14 @@
         Мы собрали лучшие рецепты из всех cтран мира. Мы определенно можем гарантировать, что даже самый привередливый
         посетитель найдет блюдо по своему вкусу. Мы приглашаем Вас посетить сеть ресторанов «Белый Аист» в Бишкеке.
       </p>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+        <button class="button button_white">
+            <a href="http://www.vertex-academy.com">ЗАБРОНИРОВАТЬ </a>
+        </button>
     </section>
     <section class="branches">
       <h2 class="branches__title"> “Белый Аист” - это четыре ресторана абсолютно разной направленности и местоположения
       </h2>
       <ul class="branches__list">
-
         {% for y in branch_list %}
         <li class="branches__list-item">
           <img src="{{y.image.url}}">
@@ -150,6 +150,30 @@
         </li>
         {% endfor %}
 
+        <!-- <li class="branches__list-item">
+          <img src="/static/images/branchesListitem2.png">
+          <h4>Золотой Аист</h4>
+          <p>
+            Aenean sollicitudin cursus mauris non cursus. Nunc interdum nulla leo, vel sollicitudin nunc pellentesque
+            idreontane gern.
+          </p>
+        </li>
+        <li class="branches__list-item">
+          <img src="/static/images/branchesListitem3.png">
+          <h4>Токтогула</h4>
+          <p>
+            Mauris nec accumsan ante. Mauris nec tellus rutrum, accumsan urna a, imperdiet sem. Praesent imperdiet
+            libero sit amet felis consectetur.
+          </p>
+        </li>
+        <li class="branches__list-item">
+          <img src="/static/images/branchesListitem4.png" alt="">
+          <h4>Шопокова</h4>
+          <p>
+            Fusce mattis vestibulum nisi ut rhoncus. Praesent dui mauris, eleifend eu dictum et, pharetra fermentum
+            lacus. Maecenas et orci varius, scelerisque risus.
+          </p>
+        </li> -->
       </ul>
       <div class="branches__images">
         <div class="branches__image">
@@ -182,130 +206,93 @@
           <p>{{x.description}}</p>
           <h6>{{x.price}}</h6>
         </li>
+        <!-- <li class="menu__list-item col-4">
+          <img src="{{x.image.url}}" alt="">
+          <h4>{{x.title}}</h4>
+          <p>{{x.description}}</p>
+          <h6>{{x.price}}</h6>
+        </li>
+        <li class="menu__list-item col-4">
+          <img src="{{x.image.url}}" alt="">
+          <h4>{{x.title}}</h4>
+          <p>{{x.description}}</p>
+          <h6>{{x.price}}</h6>
+        </li> -->
         {% endfor %}
 
       </ul>
-      <button class="button button_white" ><a href={% url 'menu' %}>ПОСМОТРЕТЬ МЕНЮ</a></button>
+      <button class="button button_white">
+        <a href="http://127.0.0.1:8000/menu/">ПОСМОТРЕТЬ МЕНЮ</a>
+
+        </button>
     </section>
-    <!-- <section class="kitchener"> -->
-    <!--   <div class="swiper"> -->
-    <!--     <div class="swiper-wrapper"> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/kitchener.png" alt=""> -->
-    <!--         <h4>Имя Повара</h4> -->
-    <!--         <p>Шеф повар ресторанов белый аист</p> -->
-    <!--       </div> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/kitchener.png" alt=""> -->
-    <!--         <h4>Имя Повара</h4> -->
-    <!--         <p>Шеф повар ресторанов белый аист</p> -->
-    <!--       </div> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/kitchener.png" alt=""> -->
-    <!--         <h4>Имя Повара</h4> -->
-    <!--         <p>Шеф повар ресторанов белый аист</p> -->
-    <!--       </div> -->
-    <!--     </div> -->
-    <!--     <div class="swiper-button-prev"></div> -->
-    <!--     <div class="swiper-button-next"></div> -->
-    <!--   </div> -->
-    <!-- </section> -->
-      <section class="news">
+    <!-- <section class="kitchener">
+
+        </section> -->
+    <section class="news">
       <h2 class="news__title">
         Наши новости
       </h2>
       <p class="news__info">
         Мы проводим интересные мероприятия: живые концерты, еженедельные дегустации и меню от приглашенных шефов.
       </p>
+
       <ul class="news__cards row">
         {%for i in news_list %}
           <li class="news__card col-4">
-            <img src="{{i.image.url}}" alt="" >
+            <img src="{{i.image.url}}" class="image-responsive" alt="kjfkjlka" width="400" height="400" >
             <h5><a href="{{i.name}}"></a></h5>
             <h5>{{i.date}}</h5>
             <p>{{i.description}}</p>
           </li>
+<!-- 
+          <li class="news__card col-4">
+            <img src="{{i.image.url}}" class="image-responsive" alt="jjjjjjjjjj">
+            <h5><a href="#">{{i.name}}</a></h5>
+            <h5>{{i.date}}</h5>
+            <p>{{i.description}}</p>
+          </li> -->
         {% endfor %}
       </ul>
-      </section>
+
     </section>
 
 
-
-
-    <!-- <section class="reviews"> -->
-    <!--   <h2>ОТЗЫВЫ</h2> -->
-    <!--   <div class="swiper"> -->
-    <!--     <div class="swiper-wrapper"> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/like.svg" alt=""> -->
-    <!--         <div> -->
-    <!--           <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем -->
-    <!--             уровне официанты почти -->
-    <!--             не отходят от столов</p> -->
-    <!--         </div> -->
-    <!--       </div> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/like.svg" alt=""> -->
-    <!--         <div> -->
-    <!--           <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем -->
-    <!--             уровне официанты почти -->
-    <!--             не отходят от столов</p> -->
-    <!--         </div> -->
-    <!--       </div> -->
-    <!--       <div class="swiper-slide"> -->
-    <!--         <img src="/static/images/like.svg" alt=""> -->
-    <!--         <div> -->
-    <!--           <p>Недано были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем -->
-    <!--             уровне официанты почти -->
-    <!--             не отходят от столов</p> -->
-    <!--         </div> -->
-    <!--       </div> -->
-    <!--     </div> -->
-    <!--     <div class="swiper-button-prev"></div> -->
-    <!--     <div class="swiper-button-next"></div> -->
-    <!--   </div> -->
-    <!-- </section> -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="feedback">
-      <h5>ВАША СКИДКА -10% ДО ЯНВАРЯ 2023</h5>
-      <p>Оставьте, пожалуйста, корректные данные, чтобы мы могли связаться с вами!</p>
-      <form class="form">
-        <label>
-          <input type="text">
-        </label>
-        <label>
-          <input type="text">
-        </label>
-        <label>
-          <input type="text">
-        </label>
-        <label>
-          <input type="text">
-        </label>
-        <label>
-          Выберите филиал
-          <select>
-            <option>Асанбай</option>
-            <option>Белый Аист</option>
-            <option>Токтогула</option>
-            <option>Шопокова</option>
-          </select>
-        </label>
-        <button class="formButton">Получить консультацию</button>
-      </form>
+    <section class="reviews">
+      <h2>ОТЗЫВЫ</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/static/images/like.svg" alt="">
+            <div>
+              <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
+                уровне официанты почти
+                не отходят от столов</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/static/images/like.svg" alt="">
+            <div>
+              <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
+                уровне официанты почти
+                не отходят от столов</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/static/images/like.svg" alt="">
+            <div>
+              <p>Недавно были у вас .Кухня отменная ,было очень вкусно особенно самсы и плов. Обслуживание на высшем
+                уровне официанты почти
+                не отходят от столов</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </section>
+
+    <section class="feedback"></section>
   </main>
   <footer class="footer">
     <div class="footer__contacts">
@@ -316,24 +303,9 @@
         <li>Шопокова 126, 0555194444</li>
       </ul>
     </div>
-    <div class="footer__map">
-      <img src="/static/images/map.png" alt="">
-    </div>
+    <div class="footer__map"></div>
   </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-  <script>
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-    </script>
-  </body>
+</body>
 {% endblock %}
+
 </html>

@@ -1,5 +1,5 @@
 .menu {
-    margin-top: vw(150);
+    margin:vw(150) 0;
     text-align: center;
     &__list {
         @include flex($justify: space-around);

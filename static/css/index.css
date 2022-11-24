@@ -60,7 +60,7 @@
 }
 
 .footer {
-  margin-top: 150px;
+  margin: 6.25vw 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -203,7 +203,7 @@
 }
 
 .menu {
-  margin-top: 9.375vw;
+  margin: 9.375vw 0;
   text-align: center;
 }
 .menu__list {
@@ -211,6 +211,40 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 3.125vw;
+}
+
+.kitchener {
+  background: #F3F7E9;
+}
+.kitchener .swiper {
+  width: 90vw;
+  height: 100vh;
+}
+.kitchener .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.kitchener .swiper-slide img {
+  width: 24.125vw;
+  height: 24.125vw;
+}
+.kitchener .swiper-slide h4 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.8125vw;
+  line-height: 3.5318924618vh;
+  margin: 2.6357406431vh 0;
+}
+.kitchener .swiper-slide p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6875vw;
+  line-height: 2.1085925145vh;
 }
 
 .news {
@@ -239,6 +273,91 @@
 }
 .news__card :last-child {
   margin-right: 0;
+}
+
+.reviews {
+  text-align: center;
+  margin-top: 9.375vw;
+}
+.reviews h2 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3.4375vw;
+  line-height: 5.125vw;
+}
+.reviews .swiper {
+  width: 90vw;
+  height: 70vh;
+}
+.reviews .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.reviews .swiper-slide img {
+  width: 8.4375vw;
+  height: 8.4375vw;
+}
+.reviews .swiper-slide div {
+  width: 59%;
+  margin-top: 3.125vw;
+}
+.reviews .swiper-slide div p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.75vw;
+  line-height: 2.5625vw;
+}
+
+.feedback {
+  color: white;
+  background-image: url("../images/backgroundform.png");
+  background-position: center;
+  height: 58.625vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.feedback h5, .feedback p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.8125vw;
+  line-height: 4.1875vw;
+}
+.feedback .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+  margin-top: 3.125vw;
+}
+.feedback .form label {
+  margin-bottom: 1.5625vw;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.feedback .form label input, .feedback .form label select {
+  width: 31.25vw;
+  height: 2.5vw;
+}
+.feedback .form .formButton {
+  background: #5A2F1C;
+  color: white;
+  width: 31.25vw;
+  height: 2.5vw;
 }
 
 body {
