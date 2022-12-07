@@ -1,0 +1,25 @@
+.mainMenu {
+    margin-top: vw(100);
+    margin-bottom: 0;
+    .sidebar {
+        background-color: #000;
+        color: white;
+        padding: vw(35) vw(35) 0 vw(35);
+        box-sizing: border-box;
+        @include flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        &__button {
+            width: vw(350);
+            height: vw(60);
+            margin-bottom: vw(35);
+            background-color: #000;
+            color: #fff;
+            border: vw(4) solid #fff;
+            &-active {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}

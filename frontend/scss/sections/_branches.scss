@@ -1,0 +1,42 @@
+.branches {
+    text-align: center;
+    &__title {
+        @include font(vw(58), 500, vw(86) );
+    }
+    &__list {
+        @include flex($justify: space-around);
+        align-items: center;
+        &-item {
+            @include flex($justify: space-around);
+            align-items: center;
+            flex-direction: column;
+            width: vw(327);
+            height: vw(356);
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+            h4, p {
+                color: white;
+            }
+            h4 {
+                @include font(vw(30), 500, vw(44) );
+            }
+            p {
+                @include font(vw(20), 300, vw(30) );
+            }
+        }
+    }
+    &__images {
+        margin-top: vw(150);
+        @include flex($justify: space-around);
+        flex-wrap: wrap;
+    }
+    &__image {
+        width: 48.5%;
+        margin-bottom: vw(15);
+    }
+}

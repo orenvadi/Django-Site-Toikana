@@ -1,0 +1,48 @@
+.menu {
+    text-align: center;
+    &__list {
+        @include flex($justify: space-around);
+        align-items: flex-start;
+        margin-bottom: vw(50);
+        &-item {
+            text-align: left;
+            padding: 0 vw(10) vw(40) vw(10);
+            box-sizing: border-box;
+            &:first-child { 
+                padding-left: vw(20);
+            }
+            &:nth-child(3n) {
+                padding-right: vw(20);
+            }
+            h4 {
+                @include font(vw(32), 600, vw(52));
+            }
+            img {
+                width: vw(390);
+                height: vw(260);
+                border-radius: vw(10);
+            }
+            p {
+                @include font(vw(25), 300, vw(37));
+            }
+            h6 {
+                @include font(vw(23), 600, vw(34));
+            }
+            .price {
+                @include flex($justify: space-between);
+            }
+            .menu__info {
+                margin-top: vw(10);
+                min-height: vw(260);
+                @include flex($justify: space-between);
+                flex-direction: column;
+                align-items: normal;
+            }
+        }
+    }
+    button {
+        a {
+            color: #000;
+        }
+    }
+}
