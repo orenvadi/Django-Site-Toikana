@@ -1,0 +1,26 @@
+.reviews {
+    text-align: center;
+    h2 {
+        @include font(vw(55), 600, vw(82) );
+    }
+    .swiper {
+        width: 90vw;
+        height: 55vh;
+        &-slide {
+            text-align: center;
+            @include flex;
+            flex-direction: column;
+            img {
+                width: vw(135);
+                height: vw(135);
+            }
+            div {
+                width: 59%;
+                margin-top: vw(50);
+                p {
+                    @include font(vw(28), 300, vw(41) );
+                }
+            }
+        }
+    }
+}

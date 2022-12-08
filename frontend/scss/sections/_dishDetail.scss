@@ -1,0 +1,25 @@
+.dishDetail {
+    margin-top: vw(100);
+    @include flex($justify: space-around);
+    &__image {
+        width: vw(530);
+        height: vw(350);
+    }
+    &__info {
+        width: vw(530);
+        height: vw(350);
+        @include flex($justify: space-between);
+        flex-direction: column;
+        align-items: flex-start;
+        h3 {
+            margin-bottom: vw(30);
+            @include font(vw(40), 600, vw(74));
+        }
+        p {
+            @include font(vw(25), 300, vw(30));
+        }
+        span {
+            @include font(vw(25), 600, vw(40));
+        }
+    }
+}

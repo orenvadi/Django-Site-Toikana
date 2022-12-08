@@ -1,0 +1,19 @@
+@mixin font($size, $weigth, $height) {
+	font-family: 'SF Pro Display';
+	font-style: normal;
+	font-weight: $weigth;
+	font-size: $size;
+	line-height: $height;
+};
+
+@mixin flex($justify:center) {
+	display: flex;
+	justify-content: $justify;
+	align-items: center;
+}
+
+@mixin mobile() {
+	@media screen and (max-width: 768px) {
+		@content
+	}
+}
