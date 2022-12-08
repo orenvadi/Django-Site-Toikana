@@ -39,6 +39,15 @@
             <li>
               Чуй 227а/пер.Исанова, 0554 55 44 44
             </li>
+            <li>
+              {% if user.is_authenticated %}
+              <p>Добро пожаловать {{ user.username }}!</p>
+              <p><a href="{% url 'logout' %}">Log out</a></p>
+              {% else %}
+              <p>Вы не авторизованы</p>
+              <a href="{% url 'login' %}">Войти</a>
+              <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+              {%endif%}            </li>
           </ul>
         </li>
       </ul>
