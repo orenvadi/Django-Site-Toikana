@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Menu(models.Model):
     MENU = (
         ("Первые блюда", "Первые блюда"),
@@ -28,7 +27,6 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
-
 
 class Contact(models.Model):
     instagram = models.CharField(max_length=50, null=True)

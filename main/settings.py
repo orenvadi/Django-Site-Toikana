@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from environs import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +28,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "home_page.apps.HomePageConfig",  # главная страница сайта
+    "home_page.apps.HomePageConfig",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
@@ -96,7 +96,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+LOGIN_REDIRECT_URL = "home" # new
+LOGOUT_REDIRECT_URL = "home" # new
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
