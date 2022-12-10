@@ -4,17 +4,23 @@
 
 @import './components/header';
 @import './components/footer';
+@import './components/menu';
 
 @import './sections/hero';
 @import './sections/about';
 @import './sections/reservation';
 @import './sections/branches';
-@import './sections/menu';
 @import './sections/kitchener';
-@import './sections/news';
 @import './sections/reviews';
 @import './sections/feedback';
+@import './sections/news';
+@import './sections/mainMenu';
+@import './sections/dishDetail';
 
+
+section {
+    margin-bottom: vw(100);
+}
 body {
     margin: 0;
     font-family: 'SF Pro Display';
@@ -34,20 +40,12 @@ img {
     max-width: 100%;
 }
 
-.title {
-    @include font(vw(36), 400, vh(60) );
-    margin: vh(65) 0 vh(65);
-}
-.text {
-    display: inline-block;
-    width: vw(640);
-    @include font(vw(14), 600, vh(30));
-    margin-bottom: vh(70);
-}
-
 .row {
     display: flex;
     flex-wrap: wrap;
+}
+.col-9 {
+    width: 75%;
 }
 .col-6 {
     width: 48%;
@@ -59,12 +57,13 @@ img {
     width: 25%;
 }
 .button{
-    @include font(vw(12), 800, vh(20));
+    @include font(vw(12), 800, vw(20));
     padding: vw(20) vw(50);
     border-radius: vw(37);
     text-decoration: none;
     text-align: center;
-    @include font(vw(22), 500, vh(33));
+    @include font(vw(22), 500, vw(33));
+    border: none;
     &_brown {
         background: #5A2F1C;
         color: white;
@@ -72,6 +71,7 @@ img {
     &_white {
         background: white;
         color: #000;
+        border: solid #000 vw(2);
     }
 }
 

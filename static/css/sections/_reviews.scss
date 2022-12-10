@@ -1,12 +1,11 @@
 .reviews {
     text-align: center;
-    margin-top: vw(150);
     h2 {
         @include font(vw(55), 600, vw(82) );
     }
     .swiper {
         width: 90vw;
-        height: 70vh;
+        height: 55vh;
         &-slide {
             text-align: center;
             @include flex;

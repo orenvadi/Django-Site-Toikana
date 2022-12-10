@@ -1,0 +1,31 @@
+{% load static %}
+<body>
+    <center>
+        <!-- <button><a href="/firma/">О фирме</a></button> -->
+        <link rel="stylesheet" type="text/css" href="/static/css/menu.css"/>
+
+        <h1>Наше меню</h1>
+        <div class="choose">
+            <select name="choose_position" required="required">
+                <option value="">Выберите позицию</option>
+                <option <a href="http://127.0.0.1:8000/find_type/first">Первые блюда</option>
+                <option value="2">Вторые блюда</option>
+                <option value="3">Десерты</option>
+                <option value="4">Винная карта</option>
+                <option value="5">Бар</option>
+              </select>
+        </div>
+        {% for i in menu %}
+        <div class="menu">
+            <h2>{{i.title}}</h2>
+            <p>{{i.menu}}</p>
+            <img src="{{i.image.url}}" alt="" width="400" height="400">
+            <button class="btn">
+                <a href="/dish_detail/{{i.id}}">Подробнее</a>
+            </button>
+        </div>
+        {%endfor%}
+
+    </center>
+
+</body>

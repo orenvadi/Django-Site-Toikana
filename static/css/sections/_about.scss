@@ -1,10 +1,13 @@
 .about {
-    margin: vw(160) 0;
     &__list {
         display: flex;
         justify-content: space-around;
         li {
             @include font(vw(25), 300, vw(37) );
+            svg {
+                width: vw(65);
+                height: vw(65);
+            }
         }
     }
 }

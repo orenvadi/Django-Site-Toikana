@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Описание блюда</title>
+    <link rel="stylesheet" href="/static/style_menu.css" />
+</head>
+<body>
+<center>
+  <h1><b>Название блюда</b> - {{dish.title}}</h1>
+  <p><b>Описание</b> - {{dish.description}}</p>
+  <img src="{{dish.image.url}}" alt="" width="400" height="400">
+  <p><b>Цена</b> -{{dish.price}} сом</p>
+  <p><b>Тип блюда</b> - <i>{{dish.menu}}</i></p>
+
+</center>
+</body>
+</html>

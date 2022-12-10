@@ -1,5 +1,4 @@
 .branches {
-    margin-top: vw(100);
     text-align: center;
     &__title {
         @include font(vw(58), 500, vw(86) );
@@ -23,7 +22,7 @@
             h4, p {
                 color: white;
             }
-            .h4 {
+            h4 {
                 @include font(vw(30), 500, vw(44) );
             }
             p {

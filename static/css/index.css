@@ -31,7 +31,14 @@
   align-items: center;
 }
 .header__info ul li {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header__info ul li img {
+  width: 7.1875vw;
+  height: 7.1875vw;
 }
 .header__info ul ul {
   flex-direction: column;
@@ -44,11 +51,12 @@
   line-height: 2.5vw;
 }
 .header .nav {
+  text-align: center;
   margin-top: 2.6357406431vh;
 }
 .header .nav__list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .header .nav__list-item {
@@ -57,6 +65,13 @@
   font-weight: 500;
   font-size: 1.25vw;
   line-height: 1.875vw;
+  margin-right: 3.4375vw;
+}
+.header .nav__list-item a {
+  color: #000;
+}
+.header .nav__list-item :last-child {
+  margin-right: 0;
 }
 
 .footer {
@@ -79,6 +94,83 @@
   font-size: 1.75vw;
   line-height: 2.5625vw;
 }
+.footer__contacts button {
+  margin-top: 1.5625vw;
+  width: 18.75vw;
+  height: 3.75vw;
+  border-radius: 2.5vw;
+  color: #fff;
+  background-color: #000;
+}
+.footer .map {
+  width: 62.5vw;
+  height: 34.375vw;
+}
+
+.menu {
+  text-align: center;
+}
+.menu__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 3.125vw;
+}
+.menu__list-item {
+  text-align: left;
+  padding: 0 0.625vw 2.5vw 0.625vw;
+  box-sizing: border-box;
+}
+.menu__list-item:first-child {
+  padding-left: 1.25vw;
+}
+.menu__list-item:nth-child(3n) {
+  padding-right: 1.25vw;
+}
+.menu__list-item h4 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2vw;
+  line-height: 3.25vw;
+}
+.menu__list-item img {
+  width: 24.375vw;
+  height: 16.25vw;
+  border-radius: 0.625vw;
+}
+.menu__list-item p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 2.3125vw;
+}
+.menu__list-item h6 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4375vw;
+  line-height: 2.125vw;
+}
+.menu__list-item .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu__list-item .menu__info {
+  margin-top: 0.625vw;
+  min-height: 16.25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-items: normal;
+}
+.menu button a {
+  color: #000;
+}
 
 .hero {
   color: white;
@@ -90,8 +182,10 @@
   align-items: center;
   flex-direction: column;
 }
-.hero__title, .hero .main__title {
+.hero__title {
   margin-bottom: 2.5vw;
+}
+.hero__title, .hero .main__title {
   font-family: "SF Pro Display";
   font-style: normal;
   font-weight: 500;
@@ -107,9 +201,6 @@
   margin-bottom: 7.5vw;
 }
 
-.about {
-  margin: 10vw 0;
-}
 .about__list {
   display: flex;
   justify-content: space-around;
@@ -121,13 +212,16 @@
   font-size: 1.5625vw;
   line-height: 2.3125vw;
 }
+.about__list li svg {
+  width: 4.0625vw;
+  height: 4.0625vw;
+}
 
 .reservation {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 3.75vw;
 }
 .reservation__info {
   width: 63.125vw;
@@ -137,11 +231,10 @@
   font-size: 3.125vw;
   line-height: 4.625vw;
   text-align: center;
-  margin-bottom: 6.25vw;
+  margin-bottom: 3.125vw;
 }
 
 .branches {
-  margin-top: 6.25vw;
   text-align: center;
 }
 .branches__title {
@@ -176,7 +269,7 @@
 .branches__list-item h4, .branches__list-item p {
   color: white;
 }
-.branches__list-item .h4 {
+.branches__list-item h4 {
   font-family: "SF Pro Display";
   font-style: normal;
   font-weight: 500;
@@ -200,17 +293,6 @@
 .branches__image {
   width: 48.5%;
   margin-bottom: 0.9375vw;
-}
-
-.menu {
-  margin: 9.375vw 0;
-  text-align: center;
-}
-.menu__list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 3.125vw;
 }
 
 .kitchener {
@@ -247,37 +329,8 @@
   line-height: 2.1085925145vh;
 }
 
-.news {
-  text-align: center;
-}
-.news__title {
-  font-family: "SF Pro Display";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 3.75vw;
-  line-height: 5.5625vw;
-}
-.news__info {
-  font-family: "SF Pro Display";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2.1875vw;
-  line-height: 3.25vw;
-  margin-bottom: 6.25vw;
-}
-.news__cards {
-  justify-content: center;
-}
-.news__card {
-  margin-right: 3.4375vw;
-}
-.news__card :last-child {
-  margin-right: 0;
-}
-
 .reviews {
   text-align: center;
-  margin-top: 9.375vw;
 }
 .reviews h2 {
   font-family: "SF Pro Display";
@@ -288,7 +341,7 @@
 }
 .reviews .swiper {
   width: 90vw;
-  height: 70vh;
+  height: 55vh;
 }
 .reviews .swiper-slide {
   text-align: center;
@@ -351,13 +404,169 @@
 }
 .feedback .form label input, .feedback .form label select {
   width: 31.25vw;
-  height: 2.5vw;
+  height: 2.8125vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.feedback .form label select {
+  height: 3.3125vw;
+}
+.feedback .form label input::-moz-placeholder {
+  color: black;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.feedback .form label input:-ms-input-placeholder {
+  color: black;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.feedback .form label input::placeholder {
+  color: black;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
 }
 .feedback .form .formButton {
   background: #5A2F1C;
+  border-radius: 0.625vw;
   color: white;
   width: 31.25vw;
-  height: 2.5vw;
+  height: 3.125vw;
+  border: none;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+
+.news {
+  text-align: center;
+}
+.news__title {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.75vw;
+  line-height: 5.5625vw;
+}
+.news__info {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.1875vw;
+  line-height: 3.25vw;
+  margin-bottom: 3.125vw;
+}
+.news__cards {
+  justify-content: center;
+  text-align: left;
+}
+.news__cards h5 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.0625vw;
+  line-height: 3.0625vw;
+}
+.news__cards p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.25vw;
+  line-height: 1.875vw;
+}
+.news__card {
+  margin-right: 3.4375vw;
+}
+.news__card :last-child {
+  margin-right: 0;
+}
+
+.mainMenu {
+  margin-top: 6.25vw;
+  margin-bottom: 0;
+}
+.mainMenu .sidebar {
+  background-color: #000;
+  color: white;
+  padding: 2.1875vw 2.1875vw 0 2.1875vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.mainMenu .sidebar__button {
+  width: 21.875vw;
+  height: 3.75vw;
+  margin-bottom: 2.1875vw;
+  background-color: #000;
+  color: #fff;
+  border: 0.25vw solid #fff;
+}
+.mainMenu .sidebar__button-active {
+  background-color: #fff;
+  color: #000;
+}
+
+.dishDetail {
+  margin-top: 6.25vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dishDetail__image {
+  width: 33.125vw;
+  height: 21.875vw;
+}
+.dishDetail__info {
+  width: 33.125vw;
+  height: 21.875vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dishDetail__info h3 {
+  margin-bottom: 1.875vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.5vw;
+  line-height: 4.625vw;
+}
+.dishDetail__info p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5625vw;
+  line-height: 1.875vw;
+}
+.dishDetail__info span {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5625vw;
+  line-height: 2.5vw;
+}
+
+section {
+  margin-bottom: 6.25vw;
 }
 
 body {
@@ -383,29 +592,13 @@ img {
   max-width: 100%;
 }
 
-.title {
-  font-family: "SF Pro Display";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.25vw;
-  line-height: 3.1628887717vh;
-  margin: 3.4264628361vh 0 3.4264628361vh;
-}
-
-.text {
-  display: inline-block;
-  width: 40vw;
-  font-family: "SF Pro Display";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.875vw;
-  line-height: 1.5814443859vh;
-  margin-bottom: 3.6900369004vh;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.col-9 {
+  width: 75%;
 }
 
 .col-6 {
@@ -425,7 +618,7 @@ img {
   font-style: normal;
   font-weight: 800;
   font-size: 0.75vw;
-  line-height: 1.0542962572vh;
+  line-height: 1.25vw;
   padding: 1.25vw 3.125vw;
   border-radius: 2.3125vw;
   text-decoration: none;
@@ -434,7 +627,8 @@ img {
   font-style: normal;
   font-weight: 500;
   font-size: 1.375vw;
-  line-height: 1.7395888245vh;
+  line-height: 2.0625vw;
+  border: none;
 }
 .button_brown {
   background: #5A2F1C;
@@ -443,4 +637,5 @@ img {
 .button_white {
   background: white;
   color: #000;
+  border: solid #000 0.125vw;
 }/*# sourceMappingURL=index.css.map */

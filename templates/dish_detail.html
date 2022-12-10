@@ -1,19 +1,85 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Описание блюда</title>
-    <link rel="stylesheet" href="/static/style_menu.css" />
-</head>
-<body>
-<center>
-  <h1><b>Название блюда</b> - {{dish.title}}</h1>
-  <p><b>Описание</b> - {{dish.description}}</p>
-  <img src="{{dish.image.url}}" alt="" width="400" height="400">
-  <p><b>Цена</b> -{{dish.price}} сом</p>
-  <p><b>Тип блюда</b> - <i>{{dish.menu}}</i></p>
 
-</center>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Белый Аист - меню</title>
+  <link rel="stylesheet" href="/static/css/index.css">dish
+  <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__info">
+      <ul>
+        <li>
+          Рестораны “Белый аист”
+        </li>
+        <li>
+          <img class="" src="/static/images/logo.svg" alt="logo">
+          <p class="logo__title">БЕЛЫЙ АИСТ</p>
+        </li>
+        <li>
+          <ul>
+            <li>
+              Асанбай,Токомбаева 21/А, 0555314444
+            </li>
+            <li>
+              Токтогула 116/А, 0555124444
+            </li>
+            <li>
+              Шопокова 126, 0555194444
+            </li>
+            <li>
+              Чуй 227а/пер.Исанова, 0554 55 44 44
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'menu' %}">МЕНЮ</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
+        </li>
+        <li class="nav__list-item">РЕГИСТРАЦИЯ</li>
+        <li class="nav__list-item">ВХОД</li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <section class="dishDetail">
+      <div class="dishDetail__back">
+        <a href="{% url 'menu' %}">
+          <svg width="75" height="50" viewBox="0 0 75 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M75 20.8333H15.9583L30.875 5.875L25 0L0 25L25 50L30.875 44.0833L15.9583 29.1667H75V20.8333Z"
+              fill="black" />
+          </svg>
+        </a>
+      </div>
+      <div class="dishDetail__image">
+        <img src="{{dish.image.url}}" alt="">
+      </div>
+      <div class="dishDetail__info">
+        <div>
+          <h3>{{dish.title}}</h3>
+          <p>
+            {{dish.description}}
+          </p>
+        </div>
+        <span>цена: {{dish.price}} сом</span>
+        <!-- <p>{{dish.menu}}</p> -->
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -19,16 +19,29 @@
             text-align: left;
             display: flex;
             flex-direction: column;
-            input, select {
+            input, select{
                 width: vw(500);
-                height: vw(40);
+                height: vw(45);
+                @include font(vw(20), 300, vw(30));
+            }
+            select {
+                height: vw(53);
+            }
+            input {
+                &::placeholder {
+                    color: black;
+                    @include font(vw(20), 300, vw(30));
+                }
             }
         }
         .formButton {
             background: #5A2F1C;
+            border-radius: vw(10);
             color: white;
             width: vw(500);
-            height: vw(40);
+            height: vw(50);
+            border: none;
+            @include font(vw(20), 300, vw(30));
         }
     }
 }

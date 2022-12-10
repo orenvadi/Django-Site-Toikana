@@ -5,8 +5,10 @@
     height: vw(938);
     @include flex();
     flex-direction: column;
-    &__title, .main__title {
+    &__title {
         margin-bottom: vw(40);
+    }
+    &__title, .main__title {
         @include font(vw(60), 500, vw(89));
     }
     &__info {

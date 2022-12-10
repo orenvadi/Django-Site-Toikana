@@ -13,7 +13,7 @@ def show_menu(request):
 
 def show_news(request):
     news = models.News.objects.all()
-    return render(request, "news.html", {"news": news})
+    return render(request, "about.html", {"news": news})
 
 
 # получение одного блюда
@@ -38,8 +38,8 @@ class HomePageView(ListView):  # просмотр начальной стран�
             {
                 "menu_list": models.Menu.objects.order_by("title"),
                 "branch_list": models.Branch.objects.all(),
-                "chef_list":models.Chef.objects.all(),
-                "review_list":models.Review.objects.all(),
+                "chef_list": models.Chef.objects.all(),
+                "review_list": models.Review.objects.all(),
             }
         )
         return context

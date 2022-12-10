@@ -1,0 +1,24 @@
+
+<h1>Наши контакты</h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="/static/css/menu.css"/>
+<body>
+    <center>
+        <header>
+            <h2>
+             Наши Контакты
+            </h2>
+        </header>
+        {% for i in contacts %}
+        <div class="class">
+            <h2>{{i.instagram}}</h2>
+            <p>{{i.whatsApp}}</p>
+            <p>{{i.address}}</p>
+            <img src="{{i.image.url}}" alt="" width="400" height="400">
+            <!-- <button class="btn">
+                <a href="/dish_detail/{{i.id}}">Подробнее</a>
+            </button> -->
+        </div>
+        {%endfor%}
+    </center>
+</body>
