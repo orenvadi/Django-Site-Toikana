@@ -41,11 +41,12 @@
             <li>
               {% if user.is_authenticated %}
               <p>Добро пожаловать {{ user.username }}!</p>
-              <p><a href="{% url 'logout' %}">Log out</a></p>
+              <p><a href="{% url 'logout' %}">Выйти</a></p>
               {% else %}
               <p>Вы не авторизованы</p>
               <a href="{% url 'login' %}">Войти</a>
-              <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+              <a href="{% url 'signup' %}">Зарегистрироваться</a>
+              <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
               {%endif%}
             </li>
           </ul>
@@ -63,8 +64,12 @@
         <li class="nav__list-item">
           <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
         </li>
-        <li class="nav__list-item">РЕГИСТРАЦИЯ</li>
-        <li class="nav__list-item">ВХОД</li>
+        <li class="nav__list-item">
+          <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'login' %}">ВХОД</a>  
+        </li>
       </ul>
     </div>
   </header>
@@ -149,9 +154,17 @@
           <h4>{{y.name}}</h4>
           <p>{{y.description}}</p>
         </li>
+        <br>
+        {% if user.is_admin %}
+        <div><button class="btn">
+          <a href="{% url 'delete' y.pk %}"> Удалить </a>
+        </button>
+        <br>
+        <button class="btn">
+        <a href="{% url 'update' y.pk %}"">Изменить</a>
+        </button></div>
+        {% endif %}
         {% endfor %}
-
-
       </ul>
       <div class="branches__images">
         <div class="branches__image">
