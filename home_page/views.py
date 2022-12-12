@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, TemplateView,DeleteView,UpdateView
 
 from . import models
 
@@ -43,3 +43,15 @@ class HomePageView(ListView):  # просмотр начальной стран�
             }
         )
         return context
+
+# Update method
+class BranchUpdateView(UpdateView):
+    model = models.Branch
+    template_name = "update.html"
+    fields = "__all__"
+    success_url = '/'
+
+class BranchDeleteView(DeleteView): # new
+    model = models.Branch
+    template_name = "confirm_delete.html"
+    success_url = 'index.html'

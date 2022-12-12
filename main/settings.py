@@ -95,9 +95,10 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+AUTH_USER_MODEL = "accounts.CustomUser" # newAUTH_USER_MODEL = "accounts.CustomUser" # new
 
-LOGIN_REDIRECT_URL = "home" # new
-LOGOUT_REDIRECT_URL = "home" # new
+LOGIN_REDIRECT_URL = "/" # new
+LOGOUT_REDIRECT_URL = "/" # new
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
