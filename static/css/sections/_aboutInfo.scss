@@ -1,0 +1,7 @@
+.aboutInfo {
+    padding-top: vw(50);
+    &__contacts {
+        margin-top: vw(100);
+        @include flex($justify: space-around)
+    }
+}
