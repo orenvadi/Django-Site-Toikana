@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 from .views import HomePageView,BranchDeleteView,BranchUpdateView,AddReview
 
@@ -17,7 +18,4 @@ urlpatterns = [
     path("desserts/", views.desserts, name="desserts"),
     path("wine/", views.wine, name="wine"),
     path("drinks/", views.drinks, name="drinks"),
-
-
-
 ]
