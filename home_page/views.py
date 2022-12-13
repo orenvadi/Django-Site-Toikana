@@ -1,9 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import ListView, TemplateView,DeleteView,UpdateView,CreateView
-from .forms import AddReview
+from django.views.generic import (CreateView, DeleteView, ListView,
+                                  TemplateView, UpdateView)
+
 from . import models
+from .forms import AddReview
 
 
 def show_signup(request):
@@ -36,12 +38,12 @@ class HomePageView(ListView):  # просмотр начальной стран�
     context_object_name = "news_list"
     template_name = "index.html"
 
-    def get_context_data(self,*args, **kwargs):
-        context = super(HomePageView, self).get_context_data(*args,**kwargs)
-        context['review_list'] = models.Review.objects.all()
-        context['menu_list'] = models.Menu.objects.all()
-        context['branch_list'] = models.Branch.objects.all()
-        context['chef_list'] = models.Chef.objects.all()
+    def get_context_data(self, *args, **kwargs):
+        context = super(HomePageView, self).get_context_data(*args, **kwargs)
+        context["review_list"] = models.Review.objects.all()
+        context["menu_list"] = models.Menu.objects.all()
+        context["branch_list"] = models.Branch.objects.all()
+        context["chef_list"] = models.Chef.objects.all()
         return context
 
     # def get_context_data(self, **kwargs):
@@ -55,7 +57,7 @@ class HomePageView(ListView):  # просмотр начальной стран�
     #         }
     #     )
     #     return context
-=======
+
 
 # Update method
 class BranchUpdateView(UpdateView):
@@ -68,10 +70,11 @@ class BranchUpdateView(UpdateView):
 class BranchDeleteView(DeleteView):  # new
     model = models.Branch
     template_name = "confirm_delete.html"
-    success_url = 'index.html'
+    success_url = "index.html"
 
-#Leave review
+
+# Leave review
 class AddReview(CreateView):
-   form_class = AddReview
-   template_name = 'contact.html'   
-   success_url = '/'
+    form_class = AddReview
+    template_name = "contact.html"
+    success_url = "/"
