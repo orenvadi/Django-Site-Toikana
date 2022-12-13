@@ -603,6 +603,14 @@ img {
   line-height: 1.875vw;
   margin-top: 3.125vw;
 }
+.form .id_is_admin {
+  flex-direction: row;
+}
+.form .id_is_admin input {
+  margin-left: 18.75vw;
+  width: 1.875vw;
+  height: 1.875vw;
+}
 .form label {
   margin-bottom: 1.5625vw;
   text-align: left;
@@ -662,4 +670,26 @@ img {
   font-weight: 300;
   font-size: 1.25vw;
   line-height: 1.875vw;
+}
+
+.btn {
+  padding: 0.3125vw 0.9375vw;
+  border-radius: 0.9375vw;
+  text-decoration: none;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125vw;
+  line-height: 2.0625vw;
+  border: none;
+  background: #5A2F1C;
+  margin-right: 0.625vw;
+}
+.btn:last-child {
+  margin-right: 0;
+}
+.btn a {
+  color: white !important;
+  text-decoration: none;
 }/*# sourceMappingURL=index.css.map */

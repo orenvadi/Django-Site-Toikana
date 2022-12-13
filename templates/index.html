@@ -153,18 +153,18 @@
           <img src="{{y.image.url}}">
           <h4>{{y.name}}</h4>
           <p>{{y.description}}</p>
+          {% if user.is_admin %}
+          <div>
+            <button class="btn">
+              <a href="{% url 'delete' y.pk %}"> Удалить </a>
+            </button>
+            <button class="btn">
+              <a href="{% url 'update' y.pk %}"">Изменить</a>
+            </button>
+          </div>
+          {% endif %}
+          {% endfor %}
         </li>
-        <br>
-        {% if user.is_admin %}
-        <div><button class="btn">
-          <a href="{% url 'delete' y.pk %}"> Удалить </a>
-        </button>
-        <br>
-        <button class="btn">
-        <a href="{% url 'update' y.pk %}"">Изменить</a>
-        </button></div>
-        {% endif %}
-        {% endfor %}
       </ul>
       <div class="branches__images">
         <div class="branches__image">
@@ -200,6 +200,14 @@
           <div class="menu__info">
             <p>{{x.description}}</p>
             <h6> цена: {{x.price}}</h6>
+            <div>
+              <button class="btn">
+                <a href=""> Удалить </a>
+              </button>
+              <button class="btn">
+                <a href="">Изменить</a>
+              </button>
+            </div>
           </div>
         </li>
         {% endfor %}

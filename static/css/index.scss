@@ -82,6 +82,14 @@ img {
     flex-direction: column;
     @include font(vw(20), 300, vw(30));
     margin-top: vw(50);
+    .id_is_admin {
+        flex-direction: row;
+        input {
+            margin-left: vw(300);
+            width: vw(30);
+            height: vw(30);
+        }
+    }
     label {
         margin-bottom: vw(25);
         text-align: left;
@@ -113,6 +121,24 @@ img {
         box-sizing: border-box;
         border: none;
         @include font(vw(20), 300, vw(30));
+    }
+}
+
+.btn {
+    padding: vw(5) vw(15);
+    border-radius: vw(15);
+    text-decoration: none;
+    text-align: center;
+    @include font(vw(18), 500, vw(33));
+    border: none;
+    background: #5A2F1C;
+    margin-right: vw(10);
+    &:last-child {
+        margin-right: 0;
+    }
+    a {
+        color: white !important;
+        text-decoration: none;
     }
 }
 
