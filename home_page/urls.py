@@ -12,5 +12,12 @@ urlpatterns = [
     path('delete/<int:pk>', BranchDeleteView.as_view(), name='delete'),
     path('update/<int:pk>', views.BranchUpdateView.as_view(), name="update"),
     path("leave_review/", AddReview.as_view(), name="review"),
+    path("first/", views.first_course, name="first"),
+    path("second/", views.second_course, name="second"),
+    path("desserts/", views.desserts, name="desserts"),
+    path("wine/", views.wine, name="wine"),
+    path("drinks/", views.drinks, name="drinks"),
+
+
 
 ]
