@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+{% block content %}
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Белый Аист - вход</title>
+  <title>Белый Аист - главная</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/static/css/index.css">
   <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
 </head>
@@ -35,6 +38,17 @@
             <li>
               Чуй 227а/пер.Исанова, 0554 55 44 44
             </li>
+            <li>
+              {% if user.is_authenticated %}
+              <p>Добро пожаловать {{ user.username }}!</p>
+              <p><a href="{% url 'logout' %}">Выйти</a></p>
+              {% else %}
+              <p>Вы не авторизованы</p>
+              <a href="{% url 'login' %}">Войти</a>
+              <a href="{% url 'signup' %}">Зарегистрироваться</a>
+              <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+              {%endif%}
+            </li>
           </ul>
         </li>
       </ul>
@@ -42,49 +56,28 @@
     <div class="nav">
       <ul class="nav__list">
         <li class="nav__list-item">
-          <a href="/static/index.html">ГЛАВНАЯ</a>
+          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
         </li>
         <li class="nav__list-item">
-          <a href="/static/menu.html">МЕНЮ</a>
+          <a href="{% url 'menu' %}">МЕНЮ</a>
         </li>
         <li class="nav__list-item">
-          <a href="/static/about.html">ИНФОРМАЦИЯ</a>
+          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
         </li>
         <li class="nav__list-item">
-          <a href="/static/signUp.html">РЕГИСТРАЦИЯ</a>
+          <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
         </li>
         <li class="nav__list-item">
-          <a href="/static/logIn.html">ВХОД</a>
+          <a href="{% url 'login' %}">ВХОД</a>
         </li>
       </ul>
     </div>
   </header>
-  <main>
-    <section class="signUp">
-      <form class="form">
-        <label>
-          <input type="text" placeholder="Имя">
-        </label>
-        <label>
-          <input type="text" placeholder="Фамилия">
-        </label>
-        <label>
-          <input type="text" placeholder="Номер телефона">
-        </label>
-        <label class="id_is_admin" for="id_is_admin">
-          <span>Вы конченный????</span>
-          <input type="checkbox" name="is_admin" id="id_is_admin">
-        </label>
-        <label>
-          <input type="password" placeholder="Пароль">
-        </label>
-        <label>
-          <input type="password" placeholder="Повторите пароль">
-        </label>
-        <button class="formButton">ЗАРЕГЕСТРИРОВАТЬСЯ</button>
-      </form>
-    </section>
-  </main>
+
+  {% block main %} {% endblock main %}
+
 </body>
+
+{% endblock %}
 
 </html>
