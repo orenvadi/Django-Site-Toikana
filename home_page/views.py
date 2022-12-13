@@ -5,17 +5,32 @@ from django.views.generic import (CreateView, DeleteView, ListView,
                                   TemplateView, UpdateView)
 
 from . import models
+from .models import Menu
 from .forms import AddReview
-
-
-def show_signup(request):
-    return render(request, "signUp.html")
-
 
 def show_menu(request):
     menu = models.Menu.objects.all()
     return render(request, "menu.html", {"menu": menu})
 
+def first_course(request):
+    dish = Menu.objects.filter(menu ='Первые блюда')
+    return render(request,"menu_type.html",{"dish":dish})
+
+def second_course(request):
+    dish= Menu.objects.filter(menu = 'Вторые блюда')
+    return render(request,"menu_type.html",{"dish":dish})
+
+def desserts(request):
+    dish= Menu.objects.filter(menu = 'Десерты')
+    return render(request,"menu_type.html",{"dish":dish})
+
+def wine(request):
+    dish= Menu.objects.filter(menu = 'Винная карта')
+    return render(request,"menu_type.html",{"dish":dish})
+
+def drinks(request):
+    dish= Menu.objects.filter(menu = 'Напитки')
+    return render(request,"menu_type.html",{"dish":dish})
 
 def show_news(request):
     news = models.News.objects.all()

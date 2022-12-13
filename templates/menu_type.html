@@ -81,17 +81,17 @@
         </div>
         <div class="menu col-9">
           <ul class="menu__list row">
-            {% for i in menu %}
+            {% for i in dish %}
             <li class="menu__list-item col-4">
               <a href="/dish_detail/{{i.id}}">
                 <img src="{{i.image.url}}" alt="">
               </a>
               <h4>{{i.title}}</h4>
               <div class="menu__info">
-                <h6>{{i.description}}</h6>
+                <h3>{{i.description}}</h3>
                 <p>{{i.menu}}</p>
                 <div class="price">
-                  <h6>Цена: {{i.price}} сом</h6>
+                    <h6>Цена: {{i.price}} сом</h6>
                 </div>
               </div>
             </li>
