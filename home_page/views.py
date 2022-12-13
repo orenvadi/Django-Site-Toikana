@@ -1,9 +1,13 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import ListView, TemplateView,DeleteView,UpdateView
+from django.views.generic import DeleteView, ListView, TemplateView, UpdateView
 
 from . import models
+
+
+def show_signup(request):
+    return render(request, "signUp.html")
 
 
 def show_menu(request):
@@ -44,14 +48,16 @@ class HomePageView(ListView):  # просмотр начальной стран�
         )
         return context
 
+
 # Update method
 class BranchUpdateView(UpdateView):
     model = models.Branch
     template_name = "update.html"
     fields = "__all__"
-    success_url = '/'
+    success_url = "/"
 
-class BranchDeleteView(DeleteView): # new
+
+class BranchDeleteView(DeleteView):  # new
     model = models.Branch
     template_name = "confirm_delete.html"
-    success_url = 'index.html'
+    success_url = "index.html"
