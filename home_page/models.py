@@ -52,6 +52,7 @@ class Chef(models.Model):
 class Review(models.Model):
     description = models.TextField()
     name = models.TextField()
+    email=models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import HomePageView,BranchDeleteView,BranchUpdateView
+from .views import HomePageView,BranchDeleteView,BranchUpdateView,AddReview
 
 # app_name='home_page'
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
     path("contact/", views.show_contacts, name="contacts"),
     path('delete/<int:pk>', BranchDeleteView.as_view(), name='delete'),
     path('update/<int:pk>', views.BranchUpdateView.as_view(), name="update"),
+    path("leave_review/", AddReview.as_view(), name="review"),
 
 ]
