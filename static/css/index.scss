@@ -5,6 +5,8 @@
 @import './components/header';
 @import './components/footer';
 @import './components/menu';
+@import './components/signUp';
+@import './components/logIn';
 
 @import './sections/hero';
 @import './sections/about';
@@ -16,7 +18,7 @@
 @import './sections/news';
 @import './sections/mainMenu';
 @import './sections/dishDetail';
-
+@import './sections/aboutInfo';
 
 section {
     margin-bottom: vw(100);
@@ -72,6 +74,71 @@ img {
         background: white;
         color: #000;
         border: solid #000 vw(2);
+    }
+}
+
+.form {
+    @include flex;
+    flex-direction: column;
+    @include font(vw(20), 300, vw(30));
+    margin-top: vw(50);
+    .id_is_admin {
+        flex-direction: row;
+        input {
+            margin-left: vw(300);
+            width: vw(30);
+            height: vw(30);
+        }
+    }
+    label {
+        margin-bottom: vw(25);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        input, select, textarea {
+            width: vw(500);
+            height: vw(45);
+            @include font(vw(20), 300, vw(30));
+            &::placeholder {
+                color: black;
+                @include font(vw(20), 300, vw(30));
+            }
+        }
+        select {
+            height: vw(53);
+        }
+        textarea {
+            resize: none;
+            height: vw(250);
+        }
+    }
+    .formButton {
+        background: #5A2F1C;
+        border-radius: vw(10);
+        color: white;
+        width: vw(500);
+        height: vw(50);
+        box-sizing: border-box;
+        border: none;
+        @include font(vw(20), 300, vw(30));
+    }
+}
+
+.btn {
+    padding: vw(5) vw(15);
+    border-radius: vw(15);
+    text-decoration: none;
+    text-align: center;
+    @include font(vw(18), 500, vw(33));
+    border: none;
+    background: #5A2F1C;
+    margin-right: vw(10);
+    &:last-child {
+        margin-right: 0;
+    }
+    a {
+        color: white !important;
+        text-decoration: none;
     }
 }
 

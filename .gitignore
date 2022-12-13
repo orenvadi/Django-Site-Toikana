@@ -1,1 +1,7 @@
 .env
+*.pyc
+main/__pycache__/
+accounts/__pycache__/
+accounts/migrations/__pycache__/
+home_page/__pycache__/
+home_page/migrations/__pycache__/

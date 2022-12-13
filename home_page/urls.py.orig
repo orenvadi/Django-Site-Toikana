@@ -1,7 +1,11 @@
 from django.urls import path
 
 from . import views
+<<<<<<< HEAD
 from .views import HomePageView,BranchDeleteView,BranchUpdateView,AddReview
+=======
+from .views import BranchDeleteView, BranchUpdateView, HomePageView
+>>>>>>> frontend
 
 # app_name='home_page'
 urlpatterns = [
@@ -10,8 +14,14 @@ urlpatterns = [
     path("dish_detail/<int:id>/", views.find_by_id, name="dish"),
     path("news/", views.show_news, name="news"),
     path("contact/", views.show_contacts, name="contacts"),
+<<<<<<< HEAD
     path('delete/<int:pk>', BranchDeleteView.as_view(), name='delete'),
     path('update/<int:pk>', views.BranchUpdateView.as_view(), name="update"),
     path("leave_review/", AddReview.as_view(), name="review"),
+
+=======
+    path("delete/<int:pk>", BranchDeleteView.as_view(), name="delete"),
+    path("update/<int:pk>", views.BranchUpdateView.as_view(), name="update"),
     path("signupp/", views.show_signup, name="signupp"),
+>>>>>>> frontend
 ]
