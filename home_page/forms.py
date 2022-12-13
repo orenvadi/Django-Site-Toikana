@@ -1,15 +1,16 @@
 from django import forms
-from .models import *
-from . import models
+
+# from . import models
+from .models import Review
+
 
 class AddReview(forms.ModelForm):
-
-    class Meta:
+    class Meta(forms.ModelForm):
         model = Review
-        fields = ('name','description','email')
+        fields = ("name", "description", "email")
 
         widgets = {
-            'name': forms.TextInput(attrs={'class':'form-control'}),       
-            'description': forms.TextInput(attrs={'class': 'form-control'}),           
-            'email': forms.TextInput(attrs={'class': 'form-control'}),        
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "description": forms.TextInput(attrs={"class": "form-control"}),
+            "email": forms.TextInput(attrs={"class": "form-control"}),
         }
