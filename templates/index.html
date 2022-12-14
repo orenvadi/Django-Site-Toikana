@@ -127,6 +127,7 @@
           <div class="menu__info">
             <p>{{x.description}}</p>
             <h6> цена: {{x.price}}</h6>
+            {% if user.is_admin %}
             <div>
               <button class="btn">
                 <a href=""> Удалить </a>
@@ -135,6 +136,7 @@
                 <a href="">Изменить</a>
               </button>
             </div>
+            {% endif %}
           </div>
         </li>
         {% endfor %}
@@ -154,6 +156,18 @@
             <img src="{{z.image.url}}" alt="">
             <h4>{{z.name}}</h4>
             <p>{{z.description}}</p>
+            <p></p>
+            {% if user.is_admin %}
+            </br>
+            <div>
+              <button class="btn">
+                <a href=""> Удалить </a>
+              </button>
+              <button class="btn">
+                <a href="">Изменить</a>
+              </button>
+            </div>
+            {% endif %}
           </div>
           {% endfor %}
         
@@ -175,9 +189,19 @@
         {%for i in news_list %}
           <li class="news__card col-4">
             <img src="{{i.image.url}}" alt="" >
-            <h5><a href="{{i.name}}"></a></h5>
+            <h5>{{i.title}}</h5>
             <h5>{{i.date}}</h5>
             <p>{{i.description}}</p>
+            {% if user.is_admin %}
+            <div>
+              <button class="btn">
+                <a href=""> Удалить </a>
+              </button>
+              <button class="btn">
+                <a href="">Изменить</a>
+              </button>
+            </div>
+            {% endif %}
           </li>
         {% endfor %}
 
@@ -196,6 +220,8 @@
             <img src="/static/images/like.svg" alt="">
             <div>
               <p>{{ u.description }}</p>
+              <h3>{{ u.name }}</h3>
+
             </div>
           </div>
           {% endfor %}
