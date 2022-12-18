@@ -88,6 +88,9 @@
             <button class="btn">
               <a href="{% url 'update' y.pk %}"">Изменить</a>
             </button>
+            <button class="btn">
+              <a href="{% url 'addbranch' %}">Добавить</a>
+            </button>
           </div>
           {% endif %}
           {% endfor %}
@@ -130,10 +133,13 @@
             {% if user.is_admin %}
             <div>
               <button class="btn">
-                <a href=""> Удалить </a>
+                <a href="{% url 'deletedish' x.pk %}"> Удалить </a>
               </button>
               <button class="btn">
-                <a href="">Изменить</a>
+                <a href="{% url 'updatedish' x.pk %}">Изменить</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addmenu' %}">Добавить</a>
               </button>
             </div>
             {% endif %}
@@ -161,10 +167,13 @@
             </br>
             <div>
               <button class="btn">
-                <a href=""> Удалить </a>
+                <a href="{% url 'deletechef' z.pk %}"> Удалить </a>
               </button>
               <button class="btn">
-                <a href="">Изменить</a>
+                <a href="{% url 'updatechef' z.pk %}">Изменить</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addchef' %}">Добавить</a>
               </button>
             </div>
             {% endif %}
@@ -190,15 +199,17 @@
           <li class="news__card col-4">
             <img src="{{i.image.url}}" alt="" >
             <h5>{{i.title}}</h5>
-            <h5>{{i.date}}</h5>
             <p>{{i.description}}</p>
             {% if user.is_admin %}
             <div>
               <button class="btn">
-                <a href=""> Удалить </a>
+                <a href="{% url 'deletenews' i.pk %}"> Удалить </a>
               </button>
               <button class="btn">
-                <a href="">Изменить</a>
+                <a href="{% url 'updatenews' i.pk %}">Изменить</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addnews' %}">Добавить</a>
               </button>
             </div>
             {% endif %}

@@ -6,7 +6,7 @@ from django.views.generic import (CreateView, DeleteView, ListView,
 
 from . import models
 from .forms import AddReview
-from .models import Menu
+from .models import Menu,Chef,Branch,News
 
 
 def show_menu(request):
@@ -80,23 +80,88 @@ class HomePageView(ListView):  # просмотр начальной стран�
     #     )
     #     return context
 
+# Add branches
+class BranchCreateView(CreateView): # new
+    model = Branch
+    template_name = "add_new.html"
+    success_url = "/"
+    fields = ["name", "description", "image"]
 
-# Update method
+# Update branch by id
 class BranchUpdateView(UpdateView):
     model = models.Branch
     template_name = "update.html"
     fields = "__all__"
     success_url = "/"
 
-
+#Delete branch by id
 class BranchDeleteView(DeleteView):  # new
     model = models.Branch
     template_name = "confirm_delete.html"
-    success_url = "index.html"
-
+    success_url = "/"
 
 # Leave review
 class AddReview(CreateView):
     form_class = AddReview
     template_name = "about.html"
     success_url = "/"
+
+# Add dish
+class MenuCreateView(CreateView): # new
+    model = Menu
+    template_name = "add_new.html"
+    success_url = "/"
+    fields = "__all__"
+
+# Update dish by id method
+class MenuUpdateView(UpdateView):
+    model = models.Menu
+    template_name = "update.html"
+    fields = "__all__"
+    success_url = "/"
+
+#Delete dish by id method
+class MenuDeleteView(DeleteView):  # new
+    model = models.Menu
+    template_name = "confirm_delete.html"
+    success_url = "/"
+
+# Update chef by id method
+class ChefUpdateView(UpdateView):
+    model = models.Chef
+    template_name = "update.html"
+    fields = "__all__"
+    success_url = "/"
+
+#Delete chef by id method
+class ChefDeleteView(DeleteView):  # new
+    model = models.Chef
+    template_name = "confirm_delete.html"
+    success_url = "/"
+
+# Add chefs
+class ChefCreateView(CreateView): # new
+    model = Chef
+    template_name = "add_new.html"
+    success_url = "/"
+    fields = ["name", "description", "image"]
+
+# Update news by id method
+class NewsUpdateView(UpdateView):
+    model = models.News
+    template_name = "update.html"
+    fields = "__all__"
+    success_url = "/"
+
+#Delete news by id method
+class NewsDeleteView(DeleteView):  # new
+    model = models.News
+    template_name = "confirm_delete.html"
+    success_url = "/"
+
+# Add news
+class NewsCreateView(CreateView): # new
+    model = News
+    template_name = "add_new.html"
+    success_url = "/"
+    fields = "__all__"
