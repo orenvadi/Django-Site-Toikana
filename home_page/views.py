@@ -1,60 +1,57 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import (CreateView, DeleteView, ListView,
-                                  TemplateView, UpdateView)
-
+from django.views.generic import (CreateView, DeleteView, ListView,TemplateView, UpdateView)
 from . import models
 from .forms import AddReview
 from .models import Menu,Chef,Branch,News
 
-
+# Output of menu
 def show_menu(request):
     menu = models.Menu.objects.all()
     return render(request, "menu.html", {"menu": menu})
 
-
+#Filtering the menu by first courses
 def first_course(request):
     dish = Menu.objects.filter(menu="Первые блюда")
     return render(request, "menu_type.html", {"dish": dish})
 
-
+#Filtering the menu by second courses
 def second_course(request):
     dish = Menu.objects.filter(menu="Вторые блюда")
     return render(request, "menu_type.html", {"dish": dish})
 
-
+#Filtering the menu by desserts
 def desserts(request):
     dish = Menu.objects.filter(menu="Десерты")
     return render(request, "menu_type.html", {"dish": dish})
 
-
+#Filtering the menu by wine
 def wine(request):
     dish = Menu.objects.filter(menu="Винная карта")
     return render(request, "menu_type.html", {"dish": dish})
 
-
+#Filtering the menu by drinks
 def drinks(request):
     dish = Menu.objects.filter(menu="Напитки")
     return render(request, "menu_type.html", {"dish": dish})
 
-
+#Output of news
 def show_news(request):
     news = models.News.objects.all()
     return render(request, "about.html", {"news": news})
 
-
-# получение одного блюда
+#Get one dish by id
 def find_by_id(request, id):
     dish = get_object_or_404(models.Menu, id=id)
     return render(request, "dish_detail.html", {"dish": dish})
 
-
+#Output of contacts
 def show_contacts(request):
     contacts = models.Contact.objects.all()
     return render(request, "contact.html", {"contacts": contacts})
 
-
+#Output of all information listed on the main page
 class HomePageView(ListView):  # просмотр начальной страницы
     model = models.News
     context_object_name = "news_list"

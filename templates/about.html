@@ -4,14 +4,17 @@
   <section class="aboutInfo">
     <form class="form" method="post">{% csrf_token %}
       <label>
+        <h4>Name</h4>
         {{form.name}}
         <!-- <input type="text" placeholder="Имя"> -->
       </label>
       <label>
+        <h4>Email</h4>
         {{form.email}}
         <!-- <input type="email" placeholder="Email"> -->
       </label>
       <label>
+        <h4>Description</h4>
         {{form.description}}
         <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Отзыв..."></textarea> -->
       </label>
