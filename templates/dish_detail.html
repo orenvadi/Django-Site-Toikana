@@ -1,7 +1,7 @@
+{% extends "base_header.html" %}
+{% block main %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
+<!-- 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,53 +9,9 @@
   <title>Белый Аист - меню</title>
   <link rel="stylesheet" href="/static/css/index.css">dish
   <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
-</head>
+</head> -->
 
 <body>
-  <header class="header">
-    <div class="header__info">
-      <ul>
-        <li>
-          Рестораны “Белый аист”
-        </li>
-        <li>
-          <img class="" src="/static/images/logo.svg" alt="logo">
-          <p class="logo__title">БЕЛЫЙ АИСТ</p>
-        </li>
-        <li>
-          <ul>
-            <li>
-              Асанбай,Токомбаева 21/А, 0555314444
-            </li>
-            <li>
-              Токтогула 116/А, 0555124444
-            </li>
-            <li>
-              Шопокова 126, 0555194444
-            </li>
-            <li>
-              Чуй 227а/пер.Исанова, 0554 55 44 44
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="nav">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'menu' %}">МЕНЮ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
-        </li>
-        <li class="nav__list-item">РЕГИСТРАЦИЯ</li>
-        <li class="nav__list-item">ВХОД</li>
-      </ul>
-    </div>
-  </header>
   <main>
     <section class="dishDetail">
       <div class="dishDetail__back">
@@ -77,9 +33,9 @@
           </p>
         </div>
         <span>цена: {{dish.price}} сом</span>
-        <!-- <p>{{dish.menu}}</p> -->
+        <p>{{dish.menu}}</p>
       </div>
     </section>
   </main>
 </body>
-</html>
+{% endblock main %}

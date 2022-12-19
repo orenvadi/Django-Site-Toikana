@@ -45,7 +45,7 @@
               {% else %}
               <p>Вы не авторизованы</p>
               <a href="{% url 'login' %}">Войти</a>
-              <a href="{% url 'signup' %}">Зарегистрироваться</a>
+              <!-- <a href="{% url 'signup' %}">Зарегистрироваться</a> -->
               <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
               {%endif%}
             </li>
@@ -64,12 +64,12 @@
         <li class="nav__list-item">
           <a href="{% url 'review' %}">ИНФОРМАЦИЯ</a>
         </li>
-        <li class="nav__list-item">
+        <!-- <li class="nav__list-item">
           <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
         </li>
         <li class="nav__list-item">
           <a href="{% url 'login' %}">ВХОД</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </header>
