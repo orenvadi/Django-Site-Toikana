@@ -3,6 +3,7 @@
 <main>
   <section class="aboutInfo">
     <form class="form" method="post">{% csrf_token %}
+      <h2>Leave Review</h2>
       <label>
         <h4>Name</h4>
         {{form.name}}
@@ -18,7 +19,7 @@
         {{form.description}}
         <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Отзыв..."></textarea> -->
       </label>
-      <button class="formButton" type="submit">Отправить</button>
+      <button class="formButton" type="submit">Send</button>
     </form>
     <div class="aboutInfo__contacts">
       <div class="icon">

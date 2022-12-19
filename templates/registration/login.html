@@ -1,9 +1,10 @@
 {% extends "base_header.html" %}
 {% block main %}
 <main>
-  <h2 class="reservation__info"> Log in </h2>
+  <h2 class="reservation__info"></h2>
   <section class="logIn">
     <form method="post" class="form">{% csrf_token %}
+      <h2>Log in</h2>
       <label>
         <h4>Username</h4>
         {{form.username}}
