@@ -1,0 +1,36 @@
+{% extends "base_header.html" %}
+{% block main %}
+  <main>
+    <section class="mainMenu">
+      <div class="row">
+        <div class="sidebar col-3">
+            <a href="{%url 'viewreview' %}">
+                <button class="sidebar__button">VIEW REVIEWS</button>
+            </a>
+            <a href="{%url 'viewbooking' %}">
+                <button class="sidebar__button sidebar__button-active">VIEW BOOKING</button>
+            </a>
+        </div>
+        <div class="menu col-9">
+          <ul class="menu__list row">
+            {% for i in booking_list %}
+            <li class="menu__list-item col-4">
+              <!-- <a href="/dish_detail/{{i.id}}">
+                <img src="{{i.image.url}}" alt="">
+              </a> -->
+              <h4>Name : {{i.name}}</h4>
+              <div class="menu__info">
+                <h6>Phone number : {{i.phone}}
+                <p>Guests number : {{i.guests}}</p>
+                <p>Date : {{i.date}}</p>
+                <p>Branch : {{i.branch}}</p>
+                </h6>
+              </div>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock main %}
