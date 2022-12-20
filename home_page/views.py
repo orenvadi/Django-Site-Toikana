@@ -1,57 +1,69 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.views.generic import (CreateView, DeleteView, ListView,TemplateView, UpdateView)
+from django.views.generic import (CreateView, DeleteView, ListView,
+                                  TemplateView, UpdateView)
+
 from . import models
-from .forms import AddReview
-from .models import Menu,Chef,Branch,News
+from .forms import AddBooking, AddReview
+from .models import Branch, Chef, Menu, News
+
 
 # Output of menu
 def show_menu(request):
     menu = models.Menu.objects.all()
     return render(request, "menu.html", {"menu": menu})
 
-#Filtering the menu by first courses
+
+# Filtering the menu by first courses
 def first_course(request):
     dish = Menu.objects.filter(menu="Первые блюда")
     return render(request, "menu_type.html", {"dish": dish})
 
-#Filtering the menu by second courses
+
+# Filtering the menu by second courses
 def second_course(request):
     dish = Menu.objects.filter(menu="Вторые блюда")
     return render(request, "menu_type.html", {"dish": dish})
 
-#Filtering the menu by desserts
+
+# Filtering the menu by desserts
 def desserts(request):
     dish = Menu.objects.filter(menu="Десерты")
     return render(request, "menu_type.html", {"dish": dish})
 
-#Filtering the menu by wine
+
+# Filtering the menu by wine
 def wine(request):
     dish = Menu.objects.filter(menu="Винная карта")
     return render(request, "menu_type.html", {"dish": dish})
 
-#Filtering the menu by drinks
+
+# Filtering the menu by drinks
 def drinks(request):
     dish = Menu.objects.filter(menu="Напитки")
     return render(request, "menu_type.html", {"dish": dish})
 
-#Output of news
+
+# Output of news
 def show_news(request):
     news = models.News.objects.all()
     return render(request, "about.html", {"news": news})
 
-#Get one dish by id
+
+# Get one dish by id
 def find_by_id(request, id):
     dish = get_object_or_404(models.Menu, id=id)
     return render(request, "dish_detail.html", {"dish": dish})
 
-#Output of contacts
+
+# Output of contacts
 def show_contacts(request):
     contacts = models.Contact.objects.all()
     return render(request, "contact.html", {"contacts": contacts})
 
-#Output of all information listed on the main page
+
+# Output of all information listed on the main page
 class HomePageView(ListView):  # просмотр начальной страницы
     model = models.News
     context_object_name = "news_list"
@@ -77,12 +89,21 @@ class HomePageView(ListView):  # просмотр начальной стран�
     #     )
     #     return context
 
+
+# Leave review
+class AddBooking(CreateView):
+    form_class = AddBooking
+    template_name = "index_booking.html"
+    success_url = "/"
+
+
 # Add branches
-class BranchCreateView(CreateView): # new
+class BranchCreateView(CreateView):  # new
     model = Branch
     template_name = "add_new.html"
     success_url = "/"
     fields = ["name", "description", "image"]
+
 
 # Update branch by id
 class BranchUpdateView(UpdateView):
@@ -91,11 +112,13 @@ class BranchUpdateView(UpdateView):
     fields = "__all__"
     success_url = "/"
 
-#Delete branch by id
+
+# Delete branch by id
 class BranchDeleteView(DeleteView):  # new
     model = models.Branch
     template_name = "confirm_delete.html"
     success_url = "/"
+
 
 # Leave review
 class AddReview(CreateView):
@@ -103,12 +126,14 @@ class AddReview(CreateView):
     template_name = "about.html"
     success_url = "/"
 
+
 # Add dish
-class MenuCreateView(CreateView): # new
+class MenuCreateView(CreateView):  # new
     model = Menu
     template_name = "add_new.html"
     success_url = "/"
     fields = "__all__"
+
 
 # Update dish by id method
 class MenuUpdateView(UpdateView):
@@ -117,11 +142,13 @@ class MenuUpdateView(UpdateView):
     fields = "__all__"
     success_url = "/"
 
-#Delete dish by id method
+
+# Delete dish by id method
 class MenuDeleteView(DeleteView):  # new
     model = models.Menu
     template_name = "confirm_delete.html"
     success_url = "/"
+
 
 # Update chef by id method
 class ChefUpdateView(UpdateView):
@@ -130,18 +157,21 @@ class ChefUpdateView(UpdateView):
     fields = "__all__"
     success_url = "/"
 
-#Delete chef by id method
+
+# Delete chef by id method
 class ChefDeleteView(DeleteView):  # new
     model = models.Chef
     template_name = "confirm_delete.html"
     success_url = "/"
 
+
 # Add chefs
-class ChefCreateView(CreateView): # new
+class ChefCreateView(CreateView):  # new
     model = Chef
     template_name = "add_new.html"
     success_url = "/"
     fields = ["name", "description", "image"]
+
 
 # Update news by id method
 class NewsUpdateView(UpdateView):
@@ -150,14 +180,16 @@ class NewsUpdateView(UpdateView):
     fields = "__all__"
     success_url = "/"
 
-#Delete news by id method
+
+# Delete news by id method
 class NewsDeleteView(DeleteView):  # new
     model = models.News
     template_name = "confirm_delete.html"
     success_url = "/"
 
+
 # Add news
-class NewsCreateView(CreateView): # new
+class NewsCreateView(CreateView):  # new
     model = News
     template_name = "add_new.html"
     success_url = "/"

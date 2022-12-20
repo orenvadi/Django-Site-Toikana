@@ -53,9 +53,9 @@ class Chef(models.Model):
 
 class Booking(models.Model):
     name = models.TextField()
-    phone_number = models.CharField(max_length=40, null=True)
+    phone = models.CharField(max_length=40, null=True)
     date = models.DateField()
-    guests_num = models.IntegerField()
+    guests = models.IntegerField()
     BRANCHES = (
         ("Асанбай", "Асанбай"),
         ("Белый Аист", "Белый Аист"),

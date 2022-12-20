@@ -1,7 +1,11 @@
 from django.urls import path
 
 from . import views
-from .views import AddReview, BranchDeleteView, BranchUpdateView, HomePageView,MenuDeleteView,MenuUpdateView,ChefDeleteView,ChefUpdateView,BranchCreateView,MenuCreateView,NewsCreateView,NewsDeleteView,NewsUpdateView
+from .views import (AddBooking, AddReview, BranchCreateView, BranchDeleteView,
+                    BranchUpdateView, ChefDeleteView, ChefUpdateView,
+                    HomePageView, MenuCreateView, MenuDeleteView,
+                    MenuUpdateView, NewsCreateView, NewsDeleteView,
+                    NewsUpdateView)
 
 # app_name='home_page'
 urlpatterns = [
@@ -23,6 +27,7 @@ urlpatterns = [
     path("addmenu", views.MenuCreateView.as_view(), name="addmenu"),
     path("addnews", views.NewsCreateView.as_view(), name="addnews"),
     path("leave_review/", AddReview.as_view(), name="review"),
+    path("leave_booking/", AddBooking.as_view(), name="booking"),
     path("first/", views.first_course, name="first"),
     path("second/", views.second_course, name="second"),
     path("desserts/", views.desserts, name="desserts"),
