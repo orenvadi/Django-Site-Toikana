@@ -1,0 +1,66 @@
+.profile {
+    margin-top: vw(50);
+    @include flex;
+    button {
+        width: 50%;
+        height: vw(50);
+        background-color: #000;
+        color: #fff;
+        @include font(vw(34), 500, vw(50));
+        text-align: center;
+    }
+}
+.card {
+    padding: vw(35) vw(50) vw(50) vw(50);
+    width: wv(400);
+    height: vw(500);
+    background-color: #f5f5f5;
+    margin: vw(50);
+    h3 {
+        @include font(vw(38), 400, vw(56));
+        margin-bottom: vw(50);
+        color: #686868
+    }
+}
+.profileRewiews {
+    .profile {
+        button {
+            &:last-child {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+    &__card {
+        p {
+            @include font(vw(28), 300, vw(41));
+            color: #686868
+        }
+    }
+}
+.profileBooking {
+    .profile {
+        button {
+            &:first-child {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+    &__card {
+        li {
+            @include flex;
+            justify-content: start;
+            margin-bottom: vw(40);
+            svg {
+                width: vw(45);
+                height: vw(45);
+            }
+            p {
+                margin-left: vw(50);
+                @include font(vw(28), 300, vw(40));
+                color: #686868
+            }
+        }
+    }
+}
