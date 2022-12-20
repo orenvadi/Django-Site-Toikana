@@ -3,17 +3,19 @@
   <main>
     <section class="hero">
       <h1 class="main__title">
-        ВАША СКИДКА -10% ДО ЯНВАРЯ 2023
+        YOUR DISCOUNT -10% UNTIL JANUARY 2023
       </h1>
       <h2 class="hero__title">
-        В ресторанах “Белый Аист”
+         Restaurants "White Aist"
       </h2>
       <p class="hero__info">
-        Наслаждайтесь вкусными блюдами, уютной обстановкой и изысканностью наших ресторанов
+        Enjoy delicious dishes, cozy atmosphere and sophistication of our restaurants
       </p>
+      <a href="{%url 'booking' %}">
       <button class="button button_brown">
-        ЗАБРОНИРОВАТЬ
+       BOOK 
       </button>
+      </a>
     </section>
     <section class="about">
       <ul class="about__list">
@@ -27,10 +29,10 @@
               stroke="black" stroke-width="1.5" />
           </svg>
           <ul>
-            <li>Адрес:</li>
-            <li>ул.Токтогула 116а</li>
-            <li>ул. Шопокова, 126/3</li>
-            <li>Асанбай Центр, Токомбаева, 21а/4</li>
+            <li>Address:</li>
+            <li>116a Toktogul street</li>
+            <li>st. Shopokova, 126/3</li>
+            <li>Asanbay Center, Tokombaeva, 21a/4</li>
           </ul>
         </li>
         <li>
@@ -42,7 +44,7 @@
               stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <ul>
-            <li>Телефон:</li>
+            <li>Phone:</li>
             <li>+996555124444</li>
             <li>+996554554444</li>
             <li>+996555314444</li>
@@ -56,7 +58,7 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <ul>
-            <li>Мы открыты:</li>
+            <li>We are open:</li>
             <li>10:00 – 00:00</li>
           </ul>
         </li>
@@ -64,13 +66,14 @@
     </section>
     <section class="reservation">
       <p class="reservation__info">
-        Мы собрали лучшие рецепты из всех cтран мира. Мы определенно можем гарантировать, что даже самый привередливый
-        посетитель найдет блюдо по своему вкусу. Мы приглашаем Вас посетить сеть ресторанов «Белый Аист» в Бишкеке.
-      </p>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+         We have collected the best recipes from all over the world. We can definitely guarantee that even the most fastidious
+         the visitor will find a dish to his liking. We invite you to visit the network of restaurants "White Aist" in Bishkek.      </p>
+      <a href="{%url 'booking' %}">
+      <button class="button button_white">BOOK</button>
+      </a>
     </section>
     <section class="branches">
-      <h2 class="branches__title"> “Белый Аист” - это четыре ресторана абсолютно разной направленности и местоположения
+      <h2 class="branches__title"> "White Aist" - these are four restaurants of completely different directions and locations
       </h2>
       <ul class="branches__list">
 
@@ -83,13 +86,13 @@
           {% if user.is_admin %}
           <div>
             <button class="btn">
-              <a href="{% url 'delete' y.pk %}"> Удалить </a>
+              <a href="{% url 'delete' y.pk %}"> Delete </a>
             </button>
             <button class="btn">
-              <a href="{% url 'update' y.pk %}"">Изменить</a>
+              <a href="{% url 'update' y.pk %}"">Change</a>
             </button>
             <button class="btn">
-              <a href="{% url 'addbranch' %}">Добавить</a>
+              <a href="{% url 'addbranch' %}">Add</a>
             </button>
           </div>
           {% endif %}
@@ -116,7 +119,9 @@
           <img src="/static/images/restaurantPhoto6.png" alt="">
         </div>
       </div>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+      <a href="{%url 'booking' %}">
+      <button class="button button_white">BOOK</button>
+      </a>
     </section>
     <section class="menu">
       <ul class="menu__list row">
@@ -129,17 +134,17 @@
           <h4>{{x.title}}</h4>
           <div class="menu__info">
             <p>{{x.description}}</p>
-            <h6> цена: {{x.price}}</h6>
+            <h6> price: {{x.price}}</h6>
             {% if user.is_admin %}
             <div>
               <button class="btn">
-                <a href="{% url 'deletedish' x.pk %}"> Удалить </a>
+                <a href="{% url 'deletedish' x.pk %}"> Delete </a>
               </button>
               <button class="btn">
-                <a href="{% url 'updatedish' x.pk %}">Изменить</a>
+                <a href="{% url 'updatedish' x.pk %}">Change</a>
               </button>
               <button class="btn">
-                <a href="{% url 'addmenu' %}">Добавить</a>
+                <a href="{% url 'addmenu' %}">Add</a>
               </button>
             </div>
             {% endif %}
@@ -150,7 +155,7 @@
 
       </ul>
       <button class="button button_white">
-        <a href="{% url 'menu' %}">ПОСМОТРЕТЬ МЕНЮ</a>
+        <a href="{% url 'menu' %}">VIEW MENU</a>
       </button>
     </section>
     <section class="kitchener">
@@ -167,13 +172,13 @@
             </br>
             <div>
               <button class="btn">
-                <a href="{% url 'deletechef' z.pk %}"> Удалить </a>
+                <a href="{% url 'deletechef' z.pk %}"> Delete </a>
               </button>
               <button class="btn">
-                <a href="{% url 'updatechef' z.pk %}">Изменить</a>
+                <a href="{% url 'updatechef' z.pk %}">Change</a>
               </button>
               <button class="btn">
-                <a href="{% url 'addchef' %}">Добавить</a>
+                <a href="{% url 'addchef' %}">Add</a>
               </button>
             </div>
             {% endif %}
@@ -187,10 +192,10 @@
     </section>
     <section class="news">
       <h2 class="news__title">
-        Наши новости
+        Our news
       </h2>
       <p class="news__info">
-        Мы проводим интересные мероприятия: живые концерты, еженедельные дегустации и меню от приглашенных шефов.
+        We hold interesting events: live concerts, weekly tastings and menus from invited chefs.
       </p>
       <ul class="news__cards row">
 
@@ -203,13 +208,13 @@
             {% if user.is_admin %}
             <div>
               <button class="btn">
-                <a href="{% url 'deletenews' i.pk %}"> Удалить </a>
+                <a href="{% url 'deletenews' i.pk %}"> Delete </a>
               </button>
               <button class="btn">
-                <a href="{% url 'updatenews' i.pk %}">Изменить</a>
+                <a href="{% url 'updatenews' i.pk %}">Change</a>
               </button>
               <button class="btn">
-                <a href="{% url 'addnews' %}">Добавить</a>
+                <a href="{% url 'addnews' %}">Add</a>
               </button>
             </div>
             {% endif %}
@@ -222,7 +227,7 @@
 
 
     <section class="reviews">
-      <h2>ОТЗЫВЫ</h2>
+      <h2>REVIEWS</h2>
       <div class="swiper">
         <div class="swiper-wrapper">
 
@@ -241,34 +246,6 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-    </section>
-    <section class="feedback">
-      <h5>ВАША СКИДКА -10% ДО ЯНВАРЯ 2023</h5>
-      <p>Оставьте, пожалуйста, корректные данные, чтобы мы могли связаться с вами!</p>
-      <form class="form">
-        <label>
-          <input type="text" placeholder="Имя">
-        </label>
-        <label>
-          <input type="text" placeholder="Номер телефона">
-        </label>
-        <label>
-          <input type="date" placeholder="Дата мероприятия">
-        </label>
-        <label>
-          <input type="number" placeholder="Количество гостей">
-        </label>
-        <label>
-          Выберите филиал
-          <select>
-            <option>Асанбай</option>
-            <option>Белый Аист</option>
-            <option>Токтогула</option>
-            <option>Шопокова</option>
-          </select>
-        </label>
-        <button class="formButton">Получить консультацию</button>
-      </form>
     </section>
   </main>
 {% endblock main %}

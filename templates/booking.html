@@ -1,9 +1,9 @@
-{% extends "base_header_footer.html" %}
+{% extends "base_header.html" %}
 {% block main %}
 <main>
   <section class="feedback">
-    <h5>ВАША СКИДКА -10% ДО ЯНВАРЯ 2023</h5>
-    <p>Оставьте, пожалуйста, корректные данные, чтобы мы могли связаться с вами!</p>
+    <!-- <h5>ВАША СКИДКА -10% ДО ЯНВАРЯ 2023</h5> -->
+    <h5>Please leave correct data so that we can contact you!</h5>
     <form class="form" method="post">{% csrf_token %}
       <label>
         <h4>name</h4>
@@ -24,7 +24,7 @@
           <h4>branch</h4>
           {{ form.branch }}
         </label>
-        <button class="formButton" type="submit">Получить консультацию</button>
+        <button class="formButton" type="submit">get a consultation</button>
     </form>
   </section>
 </main>

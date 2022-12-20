@@ -93,7 +93,7 @@ class HomePageView(ListView):  # просмотр начальной стран�
 # Leave review
 class AddBooking(CreateView):
     form_class = AddBooking
-    template_name = "index_booking.html"
+    template_name = "booking.html"
     success_url = "/"
 
 

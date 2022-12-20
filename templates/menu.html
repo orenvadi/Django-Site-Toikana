@@ -1,26 +1,26 @@
-{% extends "base_header_footer.html" %}
+{% extends "base_header.html" %}
 {% block main %}
   <main>
     <section class="mainMenu">
       <div class="row">
         <div class="sidebar col-3">
           <button class="sidebar__button sidebar__button-active">
-            <a href="{%url 'menu' %}">ВСЕ БЛЮДА</a>
+            <a href="{%url 'menu' %}">ALL DISHES</a>
             </button>
           <button class="sidebar__button">
-            <a href="{%url 'first' %}">ПЕРВЫЕ БЛЮДА</a>
+            <a href="{%url 'first' %}">FIRST_DISHES</a>
           </button>
           <button class="sidebar__button">
-            <a href="{%url 'second' %}">ВТОРЫЕ БЛЮДА</a>
+            <a href="{%url 'second' %}">SECOND_DISHES</a>
           </button>
           <button class="sidebar__button">
-            <a href="{%url 'desserts' %}">ДЕСЕРТЫ </a> 
+            <a href="{%url 'desserts' %}">DESSERTS</a> 
           </button>
           <button class="sidebar__button">
-            <a href="{%url 'wine' %}">ВИННАЯ КАРТА</a> 
+            <a href="{%url 'wine' %}">WINE MAP</a> 
           </button>          
           <button class="sidebar__button">
-            <a href="{%url 'drinks' %}">НАПИТКИ</a>   
+            <a href="{%url 'drinks' %}">DRINKS</a>   
           </button>
         </div>
         <div class="menu col-9">
@@ -35,7 +35,7 @@
                 <h6>{{i.description}}</h6>
                 <p>{{i.menu}}</p>
                 <div class="price">
-                  <h6>Цена: {{i.price}} сом</h6>
+                  <h6>Price: {{i.price}} som</h6>
                 </div>
               </div>
             </li>
