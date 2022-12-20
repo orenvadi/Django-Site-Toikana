@@ -67,12 +67,14 @@
         <li class="nav__list-item">
           <a href="{% url 'gallery' %}">GALLERY</a>
         </li>
-        <!-- <li class="nav__list-item">
-          <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
+        {% if user.is_authenticated %}
+        <li class="nav__list-item">
+          <a href="{% url 'viewbooking' %}">VIEW BOOKINGS</a>
         </li>
         <li class="nav__list-item">
-          <a href="{% url 'login' %}">ВХОД</a>
-        </li> -->
+          <a href="{% url 'viewreview' %}">VIEW REVIEWS</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </header>
