@@ -57,10 +57,10 @@ class Booking(models.Model):
     date = models.DateField()
     guests = models.IntegerField()
     BRANCHES = (
-        ("Асанбай", "Асанбай"),
-        ("Белый Аист", "Белый Аист"),
-        ("Токтогула", "Токтогула"),
-        ("Шопокова", "Шопокова"),
+        ("Asanbai", "Asanbai"),
+        ("Golden Stork", "Golden Stork"),
+        ("Toktogula", "Toktogula"),
+        ("Shopokova", "Shopokova"),
     )
     branch = models.CharField(choices=BRANCHES, max_length=100)
 
