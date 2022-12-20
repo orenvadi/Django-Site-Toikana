@@ -17,31 +17,31 @@ def show_menu(request):
 
 # Filtering the menu by first courses
 def first_course(request):
-    dish = Menu.objects.filter(menu="Первые блюда")
+    dish = Menu.objects.filter(menu="First courses")
     return render(request, "menu_type.html", {"dish": dish})
 
 
 # Filtering the menu by second courses
 def second_course(request):
-    dish = Menu.objects.filter(menu="Вторые блюда")
+    dish = Menu.objects.filter(menu="Second courses")
     return render(request, "menu_type.html", {"dish": dish})
 
 
 # Filtering the menu by desserts
 def desserts(request):
-    dish = Menu.objects.filter(menu="Десерты")
+    dish = Menu.objects.filter(menu="Desserts")
     return render(request, "menu_type.html", {"dish": dish})
 
 
 # Filtering the menu by wine
 def wine(request):
-    dish = Menu.objects.filter(menu="Винная карта")
+    dish = Menu.objects.filter(menu="Wine Map")
     return render(request, "menu_type.html", {"dish": dish})
 
 
 # Filtering the menu by drinks
 def drinks(request):
-    dish = Menu.objects.filter(menu="Напитки")
+    dish = Menu.objects.filter(menu="Drinks")
     return render(request, "menu_type.html", {"dish": dish})
 
 
