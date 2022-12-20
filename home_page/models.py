@@ -87,3 +87,10 @@ class Branch(models.Model):
 
     def __str__(self):
         return self.name
+
+class Gallery(models.Model):
+    title=models.CharField(max_length=50)
+    image= models.ImageField(upload_to="")
+
+    def __str__(self):
+        return self.title

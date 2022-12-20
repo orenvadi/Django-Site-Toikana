@@ -6,7 +6,7 @@ from django.views.generic import (CreateView, DeleteView, ListView,
 
 from . import models
 from .forms import AddBooking, AddReview
-from .models import Branch, Chef, Menu, News,Review,Booking
+from .models import Branch, Chef, Menu, News,Review,Booking,Gallery
 
 
 # Output of menu
@@ -126,6 +126,11 @@ class AddReview(CreateView):
     template_name = "about.html"
     success_url = "/"
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(AddReview, self).get_context_data(*args, **kwargs)
+        context["news_list"] = models.News.objects.all()
+        return context
+
 
 # Add dish
 class MenuCreateView(CreateView):  # new
@@ -204,3 +209,8 @@ class BookingView(ListView):
     model = Booking
     context_object_name = "booking_list"
     template_name = "view_booking.html"
+
+class GalleryView(ListView):
+    model = Gallery
+    context_object_name = "gallery_list"
+    template_name = "view_gallery.html"

@@ -1,0 +1,13 @@
+{% extends "base_header.html" %}
+{% block main %}
+{% load static%}
+<body>
+    {% for i in gallery_list %}
+    <div class="branches__images">
+        <div class="branches__image">
+        <img src="{{i.image.url}}" alt="">
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock main %}

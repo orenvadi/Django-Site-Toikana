@@ -4,24 +4,38 @@
     <section class="mainMenu">
       <div class="row">
         <div class="sidebar col-3">
-          <button class="sidebar__button sidebar__button-active">
-            <a href="{%url 'menu' %}">ALL DISHES</a>
+          <a href="{%url 'menu' %}">
+            <button class="sidebar__button sidebar__button-active">
+              ALL DISHES
             </button>
-          <button class="sidebar__button">
-            <a href="{%url 'first' %}">FIRST COURSES</a>
-          </button>
-          <button class="sidebar__button">
-            <a href="{%url 'second' %}">SECOND COURSES</a>
-          </button>
-          <button class="sidebar__button">
-            <a href="{%url 'desserts' %}">DESSERTS</a> 
-          </button>
-          <button class="sidebar__button">
-            <a href="{%url 'wine' %}">WINE MAP</a> 
-          </button>          
-          <button class="sidebar__button">
-            <a href="{%url 'drinks' %}">DRINKS</a>   
-          </button>
+          </a>
+          <a href="{%url 'first' %}">
+            {% if dish.menu == "First courses" %}
+            <button class="sidebar__button sidebar__button-active">FIRST COURSES</button>
+            {% else %}
+            <button class="sidebar__button">FIRST COURSES</button>
+            {% endif %}
+          </a>
+          <a href="{%url 'second' %}">
+            <button class="sidebar__button">
+              SECOND COURSES
+            </button>
+          </a>
+          <a href="{%url 'desserts' %}">
+            <button class="sidebar__button">
+              DESSERTS
+            </button>
+          </a>
+          <a href="{%url 'wine' %}">
+            <button class="sidebar__button">
+              WINE MAP 
+            </button>   
+          </a>
+          <a href="{%url 'drinks' %}">
+            <button class="sidebar__button">
+              DRINKS   
+            </button>
+          </a>
         </div>
         <div class="menu col-9">
           <ul class="menu__list row">

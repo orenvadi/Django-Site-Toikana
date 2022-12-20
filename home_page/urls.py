@@ -5,7 +5,7 @@ from .views import (AddBooking, AddReview, BranchCreateView, BranchDeleteView,
                     BranchUpdateView, ChefDeleteView, ChefUpdateView,
                     HomePageView, MenuCreateView, MenuDeleteView,
                     MenuUpdateView, NewsCreateView, NewsDeleteView,
-                    NewsUpdateView,ReviewView,BookingView)
+                    NewsUpdateView,ReviewView,BookingView,GalleryView)
 
 # app_name='home_page'
 urlpatterns = [
@@ -35,5 +35,7 @@ urlpatterns = [
     path("drinks/", views.drinks, name="drinks"),
     path("review_view/",ReviewView.as_view(),name="viewreview"),
     path("booking_view/",BookingView.as_view(),name="viewbooking"),
+    path("gallery_view/",GalleryView.as_view(),name="gallery"),
+
 
 ]
