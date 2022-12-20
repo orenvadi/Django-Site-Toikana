@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Белый Аист - главная</title>
+  <title>White Stork - home</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/static/css/index.css">
   <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
@@ -18,35 +18,35 @@
     <div class="header__info">
       <ul>
         <li>
-          Рестораны “Белый аист”
+          Restaurants "White Stork"
         </li>
         <li>
           <img class="" src="/static/images/logo.svg" alt="logo">
-          <p class="logo__title">БЕЛЫЙ АИСТ</p>
+          <p class="logo__title">WHITE STORK</p>
         </li>
         <li>
           <ul>
             <li>
-              Асанбай,Токомбаева 21/А, 0555314444
+              Asanbay, Tokombayeva 21/A, 0555314444
             </li>
             <li>
-              Токтогула 116/А, 0555124444
+              Toktogula 116/A, 0555124444
             </li>
             <li>
-              Шопокова 126, 0555194444
+              Shopokova 126, 0555194444
             </li>
             <li>
-              Чуй 227а/пер.Исанова, 0554 55 44 44
+              Chui 227a / lane Isanov, 0554 55 44 44
             </li>
             <li>
               {% if user.is_authenticated %}
-              <p>Добро пожаловать {{ user.username }}!</p>
-              <p><a href="{% url 'logout' %}">Выйти</a></p>
+              <p>Welcome {{ user.username }}!</p>
+              <p><a href="{% url 'logout' %}">Logout</a></p>
               {% else %}
-              <p>Вы не авторизованы</p>
-              <a href="{% url 'login' %}">Войти</a>
-              <a href="{% url 'signup' %}">Зарегистрироваться</a>
-              <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+              <p>You're not authorized</p>
+              <a href="{% url 'login' %}">Log in</a>
+              <!-- <a href="{% url 'signup' %}">Зарегистрироваться</a> -->
+              <p><a href="{% url 'password_reset' %}">Forget password?</a></p>
               {%endif%}
             </li>
           </ul>
@@ -56,20 +56,23 @@
     <div class="nav">
       <ul class="nav__list">
         <li class="nav__list-item">
-          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
+          <a href="{% url 'home' %}">HOME</a>
         </li>
         <li class="nav__list-item">
-          <a href="{% url 'menu' %}">МЕНЮ</a>
+          <a href="{% url 'menu' %}">MENU</a>
         </li>
         <li class="nav__list-item">
-          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
+          <a href="{% url 'review' %}">ABOUT</a>
         </li>
         <li class="nav__list-item">
+          <a href="{% url 'review' %}">GALLERY</a>
+        </li>
+        <!-- <li class="nav__list-item">
           <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
         </li>
         <li class="nav__list-item">
           <a href="{% url 'login' %}">ВХОД</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </header>
@@ -78,13 +81,13 @@
 
   <footer class="footer">
     <div class="footer__contacts">
-      <h3>Контакты</h3>
+      <h3>Contacts</h3>
       <ul>
-        <li>Асанбай,Токомбаева 21/А, 0555314444</li>
-        <li>Токтогула 116/А, 0555124444</li>
-        <li>Шопокова 126, 0555194444</li>
+        <li>Asanbay, Tokombayeva 21/A, 0555314444</li>
+        <li>Toktogula 116/A, 0555124444</li>
+        <li>Shopokova 126, 0555194444</li>
       </ul>
-      <button>СВЯЗАТЬСЯ</button>
+      <button>CONTACT</button>
     </div>
     <div class="footer__map">
       <div class="location__map">

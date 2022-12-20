@@ -3,11 +3,11 @@ from django.db import models
 
 class Menu(models.Model):
     MENU = (
-        ("Первые блюда", "Первые блюда"),
-        ("Вторые блюда", "Вторые блюда"),
-        ("Десерты", "Десерты"),
-        ("Винная карта", "Винная карта"),
-        ("Бар", "Бар"),
+        ("First courses", "First courses"),
+        ("Second courses", "Second courses"),
+        ("Desserts", "Desserts"),
+        ("Wine Map", "Wine Map"),
+        ("Drinks", "Drinks"),
     )
 
     title = models.CharField(max_length=100)
@@ -53,14 +53,14 @@ class Chef(models.Model):
 
 class Booking(models.Model):
     name = models.TextField()
-    phone_number = models.CharField(max_length=40, null=True)
+    phone = models.CharField(max_length=40, null=True)
     date = models.DateField()
-    guests_num = models.IntegerField()
+    guests = models.IntegerField()
     BRANCHES = (
-        ("Асанбай", "Асанбай"),
-        ("Белый Аист", "Белый Аист"),
-        ("Токтогула", "Токтогула"),
-        ("Шопокова", "Шопокова"),
+        ("Asanbai", "Asanbai"),
+        ("Golden Stork", "Golden Stork"),
+        ("Toktogula", "Toktogula"),
+        ("Shopokova", "Shopokova"),
     )
     branch = models.CharField(choices=BRANCHES, max_length=100)
 
@@ -71,6 +71,7 @@ class Booking(models.Model):
 class Review(models.Model):
     description = models.TextField()
     name = models.TextField()
+    email = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name

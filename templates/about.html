@@ -2,17 +2,24 @@
 {% block main %}
 <main>
   <section class="aboutInfo">
-    <form class="form">
+    <form class="form" method="post">{% csrf_token %}
+      <h2>Leave Review</h2>
       <label>
-        <input type="text" placeholder="Имя">
+        <h4>Name</h4>
+        {{form.name}}
+        <!-- <input type="text" placeholder="Имя"> -->
       </label>
       <label>
-        <input type="email" placeholder="Email">
+        <h4>Email</h4>
+        {{form.email}}
+        <!-- <input type="email" placeholder="Email"> -->
       </label>
       <label>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Отзыв..."></textarea>
+        <h4>Description</h4>
+        {{form.description}}
+        <!-- <textarea name="" id="" cols="30" rows="10" placeholder="Отзыв..."></textarea> -->
       </label>
-      <button class="formButton">Отправить</button>
+      <button class="formButton" type="submit">Send</button>
     </form>
     <div class="aboutInfo__contacts">
       <div class="icon">

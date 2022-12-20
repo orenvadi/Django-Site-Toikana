@@ -1,16 +1,19 @@
 {% extends "base_header.html" %}
 {% block main %}
 <main>
-  </form>
+  <h2 class="reservation__info"></h2>
   <section class="logIn">
     <form method="post" class="form">{% csrf_token %}
+      <h2>Log in</h2>
       <label>
+        <h4>Username</h4>
         {{form.username}}
       </label>
       <label>
+        <h4>Password</h4>
         {{form.password}}
       </label>
-      <button type="submit" class="formButton">ВОЙТИ</button>
+      <button type="submit" class="formButton">Log in</button>
     </form>
   </section>
 </main>

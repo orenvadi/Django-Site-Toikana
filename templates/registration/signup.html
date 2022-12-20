@@ -3,27 +3,36 @@
 <main>
   <section class="signUp">
     <form class="form" method="post">{% csrf_token %}
+      <h2>Register</h2>
     <label>
+      <h4>Username</h4>
       {{form.username}}
     </label>
     <label>
+      <h4>Email</h4>
       <!-- <input type="text" placeholder="Номер телефона"> -->
+      {{form.email}}
+    </label>
+    <label>
+      <h4>Phone number</h4>
       {{form.phone}}
     </label>
     <label class="id_is_admin" for="id_is_admin">
-      <span>Tы конченный????</span>
+      <span>Are you an admin?</span>
       <!-- <input type="checkbox" name="is_admin" id="id_is_admin"> -->
       {{form.is_admin}}
     </label>
     <label>
+      <h4>Password</h4>
       <!-- <input type="password" placeholder="Пароль"> -->
       {{form.password1}}
     </label>
     <label>
+      <h4>Confirm password</h4>
       <!-- <input type="password" placeholder="Повторите пароль"> -->
       {{form.password2}}
     </label>
-    <button class="formButton" type= "submit">ЗАРЕГЕСТРИРОВАТЬСЯ</button>
+    <button class="formButton" type= "submit">Register</button>
     </form>
   </section>
 </main>

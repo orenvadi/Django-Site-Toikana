@@ -1,92 +1,21 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-{% block content %}
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Белый Аист - главная</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/static/css/index.css">
-  <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
-</head>
-
-<body>
-  <header class="header">
-    <div class="header__info">
-      <ul>
-        <li>
-          Рестораны “Белый аист”
-        </li>
-        <li>
-          <img class="" src="/static/images/logo.svg" alt="logo">
-          <p class="logo__title">БЕЛЫЙ АИСТ</p>
-        </li>
-        <li>
-          <ul>
-            <li>
-              Асанбай,Токомбаева 21/А, 0555314444
-            </li>
-            <li>
-              Токтогула 116/А, 0555124444
-            </li>
-            <li>
-              Шопокова 126, 0555194444
-            </li>
-            <li>
-              Чуй 227а/пер.Исанова, 0554 55 44 44
-            </li>
-            <li>
-              {% if user.is_authenticated %}
-              <p>Добро пожаловать {{ user.username }}!</p>
-              <p><a href="{% url 'logout' %}">Выйти</a></p>
-              {% else %}
-              <p>Вы не авторизованы</p>
-              <a href="{% url 'login' %}">Войти</a>
-              <a href="{% url 'signup' %}">Зарегистрироваться</a>
-              <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
-              {%endif%}
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="nav">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'menu' %}">МЕНЮ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'login' %}">ВХОД</a>  
-        </li>
-      </ul>
-    </div>
-  </header>
+{% extends "base_header_footer.html" %}
+{% block main %}
   <main>
     <section class="hero">
       <h1 class="main__title">
-        ВАША СКИДКА -10% ДО ЯНВАРЯ 2023
+        YOUR DISCOUNT -10% UNTIL JANUARY 2023
       </h1>
       <h2 class="hero__title">
-        В ресторанах “Белый Аист”
+         Restaurants "White Stork"
       </h2>
       <p class="hero__info">
-        Наслаждайтесь вкусными блюдами, уютной обстановкой и изысканностью наших ресторанов
+        Enjoy delicious dishes, cozy atmosphere and sophistication of our restaurants
       </p>
+      <a href="{%url 'booking' %}">
       <button class="button button_brown">
-        ЗАБРОНИРОВАТЬ
+       BOOK 
       </button>
+      </a>
     </section>
     <section class="about">
       <ul class="about__list">
@@ -100,10 +29,10 @@
               stroke="black" stroke-width="1.5" />
           </svg>
           <ul>
-            <li>Адрес:</li>
-            <li>ул.Токтогула 116а</li>
-            <li>ул. Шопокова, 126/3</li>
-            <li>Асанбай Центр, Токомбаева, 21а/4</li>
+            <li>Address:</li>
+            <li>116a Toktogul street</li>
+            <li>st. Shopokova, 126/3</li>
+            <li>Asanbay Center, Tokombaeva, 21a/4</li>
           </ul>
         </li>
         <li>
@@ -115,7 +44,7 @@
               stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <ul>
-            <li>Телефон:</li>
+            <li>Phone:</li>
             <li>+996555124444</li>
             <li>+996554554444</li>
             <li>+996555314444</li>
@@ -129,7 +58,7 @@
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <ul>
-            <li>Мы открыты:</li>
+            <li>We are open:</li>
             <li>10:00 – 00:00</li>
           </ul>
         </li>
@@ -137,13 +66,14 @@
     </section>
     <section class="reservation">
       <p class="reservation__info">
-        Мы собрали лучшие рецепты из всех cтран мира. Мы определенно можем гарантировать, что даже самый привередливый
-        посетитель найдет блюдо по своему вкусу. Мы приглашаем Вас посетить сеть ресторанов «Белый Аист» в Бишкеке.
-      </p>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+         We have collected the best recipes from all over the world. We can definitely guarantee that even the most fastidious
+         the visitor will find a dish to his liking. We invite you to visit the network of restaurants "White Stork" in Bishkek.      </p>
+      <a href="{%url 'booking' %}">
+      <button class="button button_white">BOOK</button>
+      </a>
     </section>
     <section class="branches">
-      <h2 class="branches__title"> “Белый Аист” - это четыре ресторана абсолютно разной направленности и местоположения
+      <h2 class="branches__title"> "White Stork" - these are four restaurants of completely different directions and locations
       </h2>
       <ul class="branches__list">
 
@@ -156,10 +86,13 @@
           {% if user.is_admin %}
           <div>
             <button class="btn">
-              <a href="{% url 'delete' y.pk %}"> Удалить </a>
+              <a href="{% url 'delete' y.pk %}"> Delete </a>
             </button>
             <button class="btn">
-              <a href="{% url 'update' y.pk %}"">Изменить</a>
+              <a href="{% url 'update' y.pk %}"">Change</a>
+            </button>
+            <button class="btn">
+              <a href="{% url 'addbranch' %}">Add</a>
             </button>
           </div>
           {% endif %}
@@ -186,7 +119,9 @@
           <img src="/static/images/restaurantPhoto6.png" alt="">
         </div>
       </div>
-      <button class="button button_white">ЗАБРОНИРОВАТЬ</button>
+      <a href="{%url 'booking' %}">
+      <button class="button button_white">BOOK</button>
+      </a>
     </section>
     <section class="menu">
       <ul class="menu__list row">
@@ -199,15 +134,20 @@
           <h4>{{x.title}}</h4>
           <div class="menu__info">
             <p>{{x.description}}</p>
-            <h6> цена: {{x.price}}</h6>
+            <h6> price: {{x.price}}</h6>
+            {% if user.is_admin %}
             <div>
               <button class="btn">
-                <a href=""> Удалить </a>
+                <a href="{% url 'deletedish' x.pk %}"> Delete </a>
               </button>
               <button class="btn">
-                <a href="">Изменить</a>
+                <a href="{% url 'updatedish' x.pk %}">Change</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addmenu' %}">Add</a>
               </button>
             </div>
+            {% endif %}
           </div>
         </li>
         {% endfor %}
@@ -215,7 +155,7 @@
 
       </ul>
       <button class="button button_white">
-        <a href="{% url 'menu' %}">ПОСМОТРЕТЬ МЕНЮ</a>
+        <a href="{% url 'menu' %}">VIEW MENU</a>
       </button>
     </section>
     <section class="kitchener">
@@ -227,6 +167,21 @@
             <img src="{{z.image.url}}" alt="">
             <h4>{{z.name}}</h4>
             <p>{{z.description}}</p>
+            <p></p>
+            {% if user.is_admin %}
+            </br>
+            <div>
+              <button class="btn">
+                <a href="{% url 'deletechef' z.pk %}"> Delete </a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'updatechef' z.pk %}">Change</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addchef' %}">Add</a>
+              </button>
+            </div>
+            {% endif %}
           </div>
           {% endfor %}
         
@@ -237,10 +192,10 @@
     </section>
     <section class="news">
       <h2 class="news__title">
-        Наши новости
+        Our news
       </h2>
       <p class="news__info">
-        Мы проводим интересные мероприятия: живые концерты, еженедельные дегустации и меню от приглашенных шефов.
+        We hold interesting events: live concerts, weekly tastings and menus from invited chefs.
       </p>
       <ul class="news__cards row">
 
@@ -248,9 +203,21 @@
         {%for i in news_list %}
           <li class="news__card col-4">
             <img src="{{i.image.url}}" alt="" >
-            <h5><a href="{{i.name}}"></a></h5>
-            <h5>{{i.date}}</h5>
+            <h5>{{i.title}}</h5>
             <p>{{i.description}}</p>
+            {% if user.is_admin %}
+            <div>
+              <button class="btn">
+                <a href="{% url 'deletenews' i.pk %}"> Delete </a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'updatenews' i.pk %}">Change</a>
+              </button>
+              <button class="btn">
+                <a href="{% url 'addnews' %}">Add</a>
+              </button>
+            </div>
+            {% endif %}
           </li>
         {% endfor %}
 
@@ -260,7 +227,7 @@
 
 
     <section class="reviews">
-      <h2>ОТЗЫВЫ</h2>
+      <h2>REVIEWS</h2>
       <div class="swiper">
         <div class="swiper-wrapper">
 
@@ -269,6 +236,8 @@
             <img src="/static/images/like.svg" alt="">
             <div>
               <p>{{ u.description }}</p>
+              <h3>{{ u.name }}</h3>
+
             </div>
           </div>
           {% endfor %}
@@ -278,86 +247,5 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
-    <section class="feedback">
-      <h5>ВАША СКИДКА -10% ДО ЯНВАРЯ 2023</h5>
-      <p>Оставьте, пожалуйста, корректные данные, чтобы мы могли связаться с вами!</p>
-      <form class="form">
-        <label>
-          <input type="text" placeholder="Имя">
-        </label>
-        <label>
-          <input type="text" placeholder="Номер телефона">
-        </label>
-        <label>
-          <input type="date" placeholder="Дата мероприятия">
-        </label>
-        <label>
-          <input type="number" placeholder="Количество гостей">
-        </label>
-        <label>
-          Выберите филиал
-          <select>
-            <option>Асанбай</option>
-            <option>Белый Аист</option>
-            <option>Токтогула</option>
-            <option>Шопокова</option>
-          </select>
-        </label>
-        <button class="formButton">Получить консультацию</button>
-      </form>
-    </section>
   </main>
-  <footer class="footer">
-    <div class="footer__contacts">
-      <h3>Контакты</h3>
-      <ul>
-        <li>Асанбай,Токомбаева 21/А, 0555314444</li>
-        <li>Токтогула 116/А, 0555124444</li>
-        <li>Шопокова 126, 0555194444</li>
-      </ul>
-      <button>СВЯЗАТЬСЯ</button>
-    </div>
-    <div class="footer__map">
-      <div class="location__map">
-        <div id="map" class="map"></div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-  <script>
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-
-  <script>
-    function initMap() {
-      // The location of Uluru
-      const uluru = {lat: 42.82804187295201, lng: 74.60983081533995};
-      // The map, centered at Uluru 
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: uluru,
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-      });
-    }
-  </script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBABhPYW7jijtAktab0802klN1G310YCuE&callback=initMap&libraries=&v=weekly"
-    async></script>
-
-</body>
-
-{% endblock %}
-</html>
+{% endblock main %}

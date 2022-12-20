@@ -1,76 +1,26 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Белый Аист - меню</title>
-  <link rel="stylesheet" href="/static/css/index.css">
-  <link rel="icon" href="/static/images/logo.svg" sizes="32*32">
-</head>
-
-<body>
-  <header class="header">
-    <div class="header__info">
-      <ul>
-        <li>
-          Рестораны “Белый аист”
-        </li>
-        <li>
-          <img class="" src="/static/images/logo.svg" alt="logo">
-          <p class="logo__title">БЕЛЫЙ АИСТ</p>
-        </li>
-        <li>
-          <ul>
-            <li>
-              Асанбай,Токомбаева 21/А, 0555314444
-            </li>
-            <li>
-              Токтогула 116/А, 0555124444
-            </li>
-            <li>
-              Шопокова 126, 0555194444
-            </li>
-            <li>
-              Чуй 227а/пер.Исанова, 0554 55 44 44
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="nav">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a href="{% url 'home' %}">ГЛАВНАЯ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'menu' %}">МЕНЮ</a>
-        </li>
-        <li class="nav__list-item">
-          <a href="{% url 'news' %}">ИНФОРМАЦИЯ</a>
-        </li>
-        <li class="nav__list-item">РЕГИСТРАЦИЯ</li>
-        <li class="nav__list-item">ВХОД</li>
-      </ul>
-    </div>
-  </header>
+{% extends "base_header.html" %}
+{% block main %}
   <main>
     <section class="mainMenu">
       <div class="row">
         <div class="sidebar col-3">
           <button class="sidebar__button sidebar__button-active">
-            САЛАТЫ
+            <a href="{%url 'menu' %}">ALL DISHES</a>
+            </button>
+          <button class="sidebar__button">
+            <a href="{%url 'first' %}">FIRST COURSES</a>
           </button>
           <button class="sidebar__button">
-            СУПЫ
+            <a href="{%url 'second' %}">SECOND COURSES</a>
           </button>
           <button class="sidebar__button">
-            ГОРЯЧЕЕ
+            <a href="{%url 'desserts' %}">DESSERTS</a> 
           </button>
           <button class="sidebar__button">
-            ДЕСЕРТЫ
+            <a href="{%url 'wine' %}">WINE MAP</a> 
+          </button>          
+          <button class="sidebar__button">
+            <a href="{%url 'drinks' %}">DRINKS</a>   
           </button>
         </div>
         <div class="menu col-9">
@@ -82,9 +32,10 @@
               </a>
               <h4>{{i.title}}</h4>
               <div class="menu__info">
+                <h6>{{i.description}}</h6>
                 <p>{{i.menu}}</p>
                 <div class="price">
-                  <h6>цена: 2500 сом</h6>
+                  <h6>Price: {{i.price}} KGS</h6>
                 </div>
               </div>
             </li>
@@ -94,41 +45,4 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="footer__contacts">
-      <h3>Контакты</h3>
-      <ul>
-        <li>Асанбай,Токомбаева 21/А, 0555314444</li>
-        <li>Токтогула 116/А, 0555124444</li>
-        <li>Шопокова 126, 0555194444</li>
-      </ul>
-      <button>СВЯЗАТЬСЯ</button>
-    </div>
-    <div class="footer__map">
-      <div class="location__map">
-        <div id="map" class="map"></div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function initMap() {
-      // The location of Uluru
-      const uluru = {lat: 42.82804187295201, lng: 74.60983081533995};
-      // The map, centered at Uluru 
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: uluru,
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-      });
-    }
-  </script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBABhPYW7jijtAktab0802klN1G310YCuE&callback=initMap&libraries=&v=weekly"
-    async></script>
-</body>
-</html>
+{% endblock main %}

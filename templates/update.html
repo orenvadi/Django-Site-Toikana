@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Update</title>
+  <meta charset="UTF-8">
+  <title>Update</title>
 </head>
+
 <body>
-<form action="" method="post" enctype="multipart/form-data">
-    <h1>Обновление информации</h1>
+  <form action="" method="post" enctype="multipart/form-data">
+    <h1>Data refreshing</h1>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="update">
-</form>
+  </form>
 
 
 </body>
+
 </html>

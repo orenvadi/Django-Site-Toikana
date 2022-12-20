@@ -13,7 +13,7 @@
             }
             h4 {
                 @include font(vw(45), 600, vh(67) );
-                margin:vh(50) 0;
+                margin:vh(50) 0, vw(25);
             }
             p {
                 @include font(vw(27), 300, vh(40) );
