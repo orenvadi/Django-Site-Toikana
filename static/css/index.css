@@ -180,6 +180,80 @@
   margin-top: 12.5vw;
 }
 
+.profile {
+  margin-top: 3.125vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile button {
+  width: 50%;
+  height: 3.125vw;
+  background-color: #000;
+  color: #fff;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.125vw;
+  line-height: 3.125vw;
+  text-align: center;
+}
+
+.card {
+  padding: 2.1875vw 3.125vw 3.125vw 3.125vw;
+  width: wv(400);
+  height: 31.25vw;
+  background-color: #f5f5f5;
+  margin: 3.125vw;
+}
+.card h3 {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.375vw;
+  line-height: 3.5vw;
+  margin-bottom: 3.125vw;
+  color: #686868;
+}
+
+.profileRewiews .profile button:last-child {
+  background-color: #fff;
+  color: #000;
+}
+.profileRewiews__card p {
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.75vw;
+  line-height: 2.5625vw;
+  color: #686868;
+}
+
+.profileBooking .profile button:first-child {
+  background-color: #fff;
+  color: #000;
+}
+.profileBooking__card li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 2.5vw;
+}
+.profileBooking__card li svg {
+  width: 2.8125vw;
+  height: 2.8125vw;
+}
+.profileBooking__card li p {
+  margin-left: 3.125vw;
+  font-family: "SF Pro Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.75vw;
+  line-height: 2.5vw;
+  color: #686868;
+}
+
 .hero {
   color: white;
   background-image: url("../images/herobg.png");
@@ -327,7 +401,7 @@
   font-weight: 600;
   font-size: 2.8125vw;
   line-height: 3.5318924618vh;
-  margin: 2.6357406431vh 0 15px;
+  margin: 2.6357406431vh 0;
 }
 .kitchener .swiper-slide p {
   font-family: "SF Pro Display";
@@ -553,11 +627,11 @@ img {
 }
 
 .col-6 {
-  width: 48%;
+  width: 47%;
 }
 
 .col-4 {
-  width: 32%;
+  width: 33%;
 }
 
 .col-3 {

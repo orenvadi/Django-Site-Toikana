@@ -11,14 +11,18 @@
             </button>
           </a>
           <a href="{%url 'first' %}">
-            <button class="sidebar__button sidebar__button-active">
-              FIRST COURSES
-            </button>
+            {% if dish.menu == "First courses" %}
+            <button class="sidebar__button sidebar__button-active">FIRST COURSES</button>
+            {% else %}
+            <button class="sidebar__button">FIRST COURSES</button>
+            {% endif %}
           </a>
           <a href="{%url 'second' %}">
-            <button class="sidebar__button">
-              SECOND COURSES
-            </button>
+            {% if dish.menu == "Second courses" %}
+            <button class="sidebar__button sidebar__button-active">SECOND COURSES</button>
+            {% else %}
+            <button class="sidebar__button">SECOND COURSES</button>
+            {% endif %}
           </a>
           <a href="{%url 'desserts' %}">
             <button class="sidebar__button">

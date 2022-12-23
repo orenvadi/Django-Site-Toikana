@@ -6,7 +6,7 @@ from django.views.generic import (CreateView, DeleteView, ListView,
 
 from . import models
 from .forms import AddBooking, AddReview
-from .models import Branch, Chef, Menu, News,Review,Booking,Gallery
+from .models import Booking, Branch, Chef, Gallery, Menu, News, Review
 
 
 # Output of menu
@@ -200,15 +200,18 @@ class NewsCreateView(CreateView):  # new
     success_url = "/"
     fields = "__all__"
 
-class ReviewView(ListView): 
+
+class ReviewView(ListView):
     model = Review
     context_object_name = "review_list"
     template_name = "view_reviews.html"
 
-class BookingView(ListView): 
+
+class BookingView(ListView):
     model = Booking
     context_object_name = "booking_list"
     template_name = "view_booking.html"
+
 
 class GalleryView(ListView):
     model = Gallery
